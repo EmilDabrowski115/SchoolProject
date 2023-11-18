@@ -69,5 +69,29 @@ namespace WPF_LoginForm.View
             // Close the current window (optional)
             this.Close();
         }
+
+        private int click_Count=0;
+        private void ChangeLanguae_Click(object sender, RoutedEventArgs e)
+        {
+            click_Count++;
+            if (click_Count % 2 == 1)
+            {
+                ChangeLanguae.Content = "Zmień Język";
+                Username.Text = "Użytkownik";
+                Password.Text = "Hasło";
+                btnLogin.Content = "Zaloguj się";
+                DontHave.Text = "Nie masz konta?";
+                registerButton.Content = "Zarejestruj się";
+            }
+            else
+            {
+                ChangeLanguae.Content = "Change Languar";
+                Username.Text = "Username";
+                Password.Text = "Password";
+                btnLogin.Content = "Log In";
+                DontHave.Text = "Don't have an account?";
+                registerButton.Content = "Register";
+            }
+        }
     }
 }

@@ -15,27 +15,21 @@
 
     <Border CornerRadius="12">
         <Border.Background>
-            <ImageBrush ImageSource="/Images/back-image.jpg" Stretch="None"/>
+            <ImageBrush ImageSource="/Images/back-Music.jpg"
+                        Stretch="Uniform"                    
+                        />
         </Border.Background>
 
-        <Border CornerRadius="10"
-                BorderThickness="2"
-                Opacity="0.95">
-
-            <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#462AD8" Offset="0"/>
-                    <GradientStop Color="#DA34AE" Offset="0.75"/>
-                    <GradientStop Color="#8A16C1" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.BorderBrush>
-
+        <Border CornerRadius="10"                    
+            BorderThickness="0"
+            Opacity="0.95">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#060531" Offset="0"/>
-                    <GradientStop Color="#1B1448" Offset="1"/>
+                    <GradientStop Color="#0eee" Offset="0"/>
+                    <GradientStop Color="#321" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -44,6 +38,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0">
+
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="25"/>
@@ -51,15 +46,7 @@
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="LOG IN"
-                               Foreground="DarkGray"
-                               FontSize="10"
-                               FontFamily="Montserrat"
-                               Grid.Column="0"
-                               VerticalAlignment="Center"
-                               Margin="10,0,0,0"/>
-
-                    <Button x:Name="btnMinimize"                           
+                        <Button x:Name="btnMinimize"                           
                             BorderThickness="0"
                             Content="-"
                             Foreground="White"
@@ -121,67 +108,100 @@
                         </Button.Template>
                     </Button>
                 </Grid>
+                <Button Content="Change Laungae"
+                        x:Name="ChangeLanguae"  
+                        Click="ChangeLanguae_Click"
+                        Grid.Column="1"
+                        Grid.Row="2" 
+                        Width="110"
+                        Height="20"
+                        Background="Transparent"                                               
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top" 
+                        ></Button>
 
-                <StackPanel Width="220" Grid.Row="1" Orientation="Vertical" Margin="0,35,0,0">
-                    <Image Source="/Images/Logo.png" Width="100" Height="100"/>
-                    <TextBlock Text="RJ CODE"
-                               Foreground="White"
+                <StackPanel Width="220"
+                            Grid.Row="1"
+                            Orientation="Vertical"
+                            Margin="0,35,0,0">
+
+
+                    <Image Source="/Images/logo.png"
+                           Width="150" />
+
+                    <TextBlock Text="Vintage Music"
+                               Foreground="#000"
                                FontSize="25"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
+                               Margin="0 0 0 15"
                                HorizontalAlignment="Center"/>
-                    <TextBlock Text="Learning to code is useful no matter what your career ambitions are."
-                               Foreground="LightGray"
+
+                    <TextBlock Text="Username"
+                               x:Name="Username"
+                               Foreground="#111"
                                FontSize="12"
                                FontWeight="Medium"
-                               FontFamily="Montserrat"
-                               TextWrapping="Wrap"
-                               TextAlignment="Center"
-                               Margin="0,5,0,0"/>
-                    <TextBlock Text="Email"
-                               Foreground="DarkGray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Montserrat"
-                               Margin="0,35,0,0"/>
-                    <TextBox x:Name="txtEmail"
+                               FontFamily="Montserrat"                             
+                               Margin="0,0,0,0"/>
+
+                    <TextBox x:Name="txtUser"
                              FontSize="13"
                              FontWeight="Medium"
-                             FontFamily="Montserrat"
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0,0,0,2"
+                             FontFamily="Montserrat"                            
+                             Foreground="#111"
+                             CaretBrush="#111"
+                             BorderBrush="#333"
+                             BorderThickness="2,2,2,2"
                              Height="28"
                              VerticalContentAlignment="Center"
                              Margin="0,5,0,0"
-                             Padding="20,0,0,0"/>
-                    <TextBlock Text="Confirm Password"
-                               Foreground="DarkGray"
+                             Padding="20,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images/user-icon.png"                                        
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="Password"
+                               x:Name="Password"
+                               Foreground="#111"
                                FontSize="12"
                                FontWeight="Medium"
-                               FontFamily="Montserrat"
+                               FontFamily="Montserrat"                             
                                Margin="0,15,0,0"/>
-                    <PasswordBox x:Name="txtConfirmPass"
-                                 FontSize="13"
-                                 FontWeight="Medium"
-                                 FontFamily="Montserrat"
-                                 Foreground="White"
-                                 CaretBrush="LightGray"
-                                 BorderBrush="DarkGray"
-                                 BorderThickness="0,0,0,2"
-                                 Height="28"
-                                 VerticalContentAlignment="Center"
-                                 Margin="0,5,0,0"
-                                 Padding="20,0,0,0"/>
+
+                    <PasswordBox x:Name="txtPass"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat"                            
+                             Foreground="#333"
+                             CaretBrush="#333"
+                             BorderBrush="#333"
+                             BorderThickness="2,2,2,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="20,0,0,0">
+
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="/Images/key-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+
                     <Button x:Name="btnRegister"
                             BorderThickness="0"
                             Content="REGISTER"
                             Foreground="White"
+                            Background="#333"
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
-                            Margin="0,50,0,0"
+                            Margin="0,25,0,0"
                             Click="btnRegister_Click">
                         <Button.Style>
                             <Style TargetType="Button">
@@ -205,32 +225,11 @@
                         </Button.Template>
                     </Button>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
-                        <TextBlock Text="Forgot Password?"
-                                   Foreground="DarkGray"
-                                   FontSize="12"
-                                   FontWeight="Medium"
-                                   FontFamily="Montserrat"/>
-                        <TextBlock Text="Reset"
-                                   Foreground="White"
-                                   FontSize="12"
-                                   FontWeight="Medium"
-                                   FontFamily="Montserrat"
-                                   Cursor="Hand"
-                                   Margin="8,0,0,0"/>
- 
-
-                        <TextBlock Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat">
-<Run Text="Already Have An Account?" />
-                        </TextBlock>
-                        <Button x:Name="loginButton"
-Content="Login"
-Foreground="White"
-FontSize="12"
-FontWeight="Medium"
-FontFamily="Montserrat"
-Cursor="Hand"
-Click="RegisterButton_Click"/>
+                        <TextBlock x:Name="HaveAccount" Text="Already have an account? "></TextBlock>
+                        <Button Content="Log In" FontFamily="Montserrat" x:Name="doLogowania" Click="DoLogowania_click" ></Button>
+                        
                     </StackPanel>
+                    <Button Content="Do maina" x:Name="DoMaina" Click="DoMaina_click" Width="121"></Button>
                 </StackPanel>
             </Grid>
         </Border>

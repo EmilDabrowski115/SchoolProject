@@ -3,11 +3,151 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodels="clr-namespace:WPF_LoginForm.Viewmodel"
+        xmlns:view="clr-namespace:WPF_LoginForm.View"
         xmlns:local="clr-namespace:WPF_LoginForm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-    <Grid>
-        
-    </Grid>
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="550" Width="800">
+    <!--Widoki Ważne NIE ZMIENIAC!!-->
+    <Window.Resources>
+        <!--Widok Browse-->
+        <DataTemplate x:Name="BrowseTemplate" DataType="{x:Type viewmodels:BrowseViewModel}">
+            <view:BrowseView DataContext="{Binding}"></view:BrowseView>
+        </DataTemplate>
+
+        <!--Widok Settings-->
+        <DataTemplate x:Name="SettingsTemplate" DataType="{x:Type viewmodels:SettingsViewModel}">
+            <view:SettingsView DataContext="{Binding}"></view:SettingsView>
+        </DataTemplate>
+        <!--Widok Activity-->
+        <DataTemplate x:Name="ActivityTemplate" DataType="{x:Type viewmodels:ActivityViewModel}">
+            <view:ActivityModel DataContext="{Binding}"></view:ActivityModel>
+        </DataTemplate>
+        <!--Widok Songs-->
+        <DataTemplate x:Name="SongsTemplate" DataType="{x:Type viewmodels:SongsViewModel}">
+            <view:SongsView DataContext="{Binding}"></view:SongsView>
+        </DataTemplate>
+        <!--Widok Albums-->
+        <DataTemplate x:Name="AlbumsTemplate" DataType="{x:Type viewmodels:AlbumsViewModel}">
+            <view:AlbumsView DataContext="{Binding}"></view:AlbumsView>
+        </DataTemplate>
+        <!--Widok Artists-->
+        <DataTemplate x:Name="ArtistsTemplate" DataType="{x:Type viewmodels:ArtistsViewModel}">
+            <view:ArtistsView DataContext="{Binding}"></view:ArtistsView>
+        </DataTemplate>
+    </Window.Resources>
+
+
+
+
+
+
+
+    <Border>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <!--To steruje stronami w srodku, NIE ZMIENIAC!!-->
+            <ContentControl Content="{Binding}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5"></ContentControl>
+
+           
+
+            <!-- Przenieś DockPanel do odpowiedniego wiersza i kolumny -->
+            <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="5" Background="#333">
+
+                <!--Przyciski kołowe-->
+                <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top" Margin="10 0 0 0">
+                    <Button Width="20" Height="20" Background="#cc3434"  Margin="0 0 0 0" Grid.Column="0" Grid.Row="0" Click="CloseBtn" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Ellipse Fill="{TemplateBinding Background}"/>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.ToolTip>
+                            <ToolTip>
+                                Zamknij!
+                            </ToolTip>                         
+                                </Button.ToolTip>                        
+                    </Button>
+                    
+                    <Button x:Name="MinimalizeBtn" Click="MinimalizeBtn_Click" Width="20" Height="20" Background="#ffff66" Margin="7 0 0 0" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Ellipse Fill="{TemplateBinding Background}"/>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.ToolTip>
+                            <ToolTip>
+                                Minimalizuj!
+                                
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button x:Name="LanguaeBtn" Click="LanguaeBtn_Click" Width="20" Height="20" Background="#99cc66"  Margin="7 0 0 0" Cursor="Hand">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Ellipse Fill="{TemplateBinding Background}"/>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.ToolTip>
+                            <ToolTip>
+                                Zmień język!
+                                
+                            </ToolTip>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+
+            </DockPanel>
+            <Border Grid.Row="1" CornerRadius="10" Background="white" Height="40" Width="155">
+                <TextBox x:Name="SearchBox" Text="Search: " Height="40" Width="140" Margin="0 0 0 0" FontSize="24" BorderThickness="0" Padding="2" GotFocus="SearchGotFocus" LostFocus="SearchLostFocus">
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="Images/Lupa.png" Stretch="Uniform" AlignmentX="Right" TileMode="None"/>
+                    </TextBox.Background>
+                </TextBox>
+            </Border>
+
+            <StackPanel Grid.Row="2">
+                <TextBlock x:Name="MainBlock" Text="Main:" FontSize="15" Foreground="White"></TextBlock>
+                <Button x:Name="BrowceBtn" Click="BrowceBtn_Click" Content="Browse" Height="30"></Button>
+                <Button Content="Activity" x:Name="ActivityBtn" Click="ActivityBtn_Click" Height="30"></Button>
+                <Button Content="Settings" Height="30" x:Name="SettingsBtn" Click="SettingsBtn_click"></Button>
+
+            </StackPanel>
+            <StackPanel Grid.Row="3">
+                <TextBlock x:Name="YourMusicBlock" Text="Your music:" FontSize="15" Foreground="White"></TextBlock>
+                <Button x:Name="SongsBtn"  Click="SongsBtn_Click"  Content="Songs"   Height="30"></Button>
+                <Button x:Name="AlbumsBtn" Click="AlbumsBtn_Click" Content="Albums"  Height="30"></Button>
+                <Button x:Name="ArtistsBtn"   Click="Artists_Click"   Content="Artists" Height="30"></Button>
+            </StackPanel>
+
+
+
+
+        </Grid>
+    </Border>
 </Window>

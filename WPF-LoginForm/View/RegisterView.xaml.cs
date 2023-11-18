@@ -43,8 +43,74 @@ namespace WPF_LoginForm.View
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            // Add your login logic here
+
+        }
+        private void DoLogowania_click(object sender, RoutedEventArgs e)
+        {
+            //navigate to the login view
+            LoginView loginView = new LoginView();
+            loginView.Show();
+            //close the current window
+            this.Close();
+
+        }
+        private void DoMaina_click(object sender, RoutedEventArgs e)
+        {
+            //navigate to the login view
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            //close the current window
+            this.Close();
+
         }
 
+       
+        private int click_Count = 0;
+        private void ChangeLanguae_Click(object sender, RoutedEventArgs e)
+        {
+            click_Count++;
+            if (click_Count % 2 == 1)
+            {
+                Username.Text = "Użytkownik";
+                Password.Text = "Hasło";
+                btnRegister.Content = "Zarejestruj się";
+                HaveAccount.Text = "Masz już konto? ";
+                doLogowania.Content = "Zaloguj się";
+                ChangeLanguae.Content = "Zmień język";
+            }
+            else
+            {
+                Username.Text = "Username";
+                Password.Text = "Password";
+                btnRegister.Content = "Register";
+                HaveAccount.Text = "Have account already? ";
+                doLogowania.Content = "Log in";
+                ChangeLanguae.Content = "Change languae";
+            }
+           
+        }
     }
 }
+/*
+  private void DoLogowania_click(object sender, RoutedEventArgs e)
+        {
+            //navigate to the login view
+            LoginView loginView = new LoginView();
+            loginView.Show();
+            //close the current window
+            this.Close();
+
+        }
+        private void DoMaina_click(object sender, RoutedEventArgs e)
+        {
+            //navigate to the login view
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            //close the current window
+            this.Close();
+
+        }
+ 
+ 
+ 
+ */
