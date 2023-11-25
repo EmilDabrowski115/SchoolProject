@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
+using WPF_LoginForm.Data;
 
 namespace WPF_LoginForm.View
 {
@@ -54,8 +55,34 @@ namespace WPF_LoginForm.View
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            // Add your login logic here
+            string username = txtUser.Text.Trim(); // Adjusted to use txtUser
+            string password = txtPass.Password.Trim(); // Adjusted to use txtPass
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter both username and password.");
+                return;
+            }
+
+            DataAccess dataAccess = new DataAccess();
+
+            // Call the AuthenticateUser method to attempt login
+            if (dataAccess.AuthenticateUser(username, password))
+            {
+                // Login successful, you can navigate to the main view or perform other actions
+                // For now, let's show a message and close the current window
+                
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                // Navigate to the main view or perform other actions here
+                // For now, let's just close the current window
+                this.Close();
+            }
+            // Login failed - no need for an else block, as error messages are shown within the AuthenticateUser method
         }
+
+       
+
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
