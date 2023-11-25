@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="600">
     
-    <Grid Background="#245" d:Background="White">
-        <ListBox>
+    <Grid >
+        <ListBox Background="#245">
             <local:SongsItemControl></local:SongsItemControl>
         </ListBox>
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,16 @@ namespace WPF_LoginForm.View
         public ArtistsView()
         {
             InitializeComponent();
+
+
+
+            ObservableCollection<ArtistsItemControl> items = new ObservableCollection<ArtistsItemControl>
+            {
+            new ArtistsItemControl { DataContext = "Element 1" },
+                // Dodaj więcej elementów, jeśli chcesz
+             };
+            ArtistsList.ItemsSource = items;
+
         }
     }
 }

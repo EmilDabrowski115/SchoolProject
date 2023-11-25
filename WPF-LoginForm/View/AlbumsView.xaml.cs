@@ -32,7 +32,7 @@ namespace WPF_LoginForm.View
             new AlbumItemControl { DataContext = "Element 1" },
              // Dodaj więcej elementów, jeśli chcesz
              };
-            debil.ItemsSource = items;
+            AlbumList.ItemsSource = items;
 
 
         }

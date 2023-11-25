@@ -76,6 +76,9 @@
     <Compile Include="Controls\AlbumItemControl.xaml.cs">
       <DependentUpon>AlbumItemControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ArtistsItemControl.xaml.cs">
+      <DependentUpon>ArtistsItemControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SongsItemControl.xaml.cs">
       <DependentUpon>SongsItemControl.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <DependentUpon>SongsView.xaml</DependentUpon>
     </Compile>
     <Page Include="Controls\AlbumItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ArtistsItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

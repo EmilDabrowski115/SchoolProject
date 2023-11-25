@@ -8,7 +8,7 @@
              d:DesignHeight="550" d:DesignWidth="600">
     <Grid Background="#245" d:Background="White">
         <!---binduje z AlbumItemControl-->
-        <ItemsControl Name="debil" ItemsSource="{Binding}" Grid.Column="0">
+        <ItemsControl Name="AlbumList" ItemsSource="{Binding}" Grid.Column="0">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Rows="2" Columns="3" />

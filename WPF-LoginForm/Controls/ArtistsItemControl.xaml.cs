@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_LoginForm.View
+namespace WPF_LoginForm
 {
     /// <summary>
-    /// Logika interakcji dla klasy SongsView.xaml
+    /// Logika interakcji dla klasy ArtistsItemControl.xaml
     /// </summary>
-    public partial class SongsView : UserControl
+    public partial class ArtistsItemControl : UserControl
     {
-        public SongsView()
+        public ArtistsItemControl()
         {
             InitializeComponent();
-
-
-       
-
-
         }
     }
 }

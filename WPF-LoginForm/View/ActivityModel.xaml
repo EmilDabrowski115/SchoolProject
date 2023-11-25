@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WPF_LoginForm"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="600">
-    <Grid Background="Blue">
+    <Grid Background="#245">
             
     </Grid>
 </UserControl>

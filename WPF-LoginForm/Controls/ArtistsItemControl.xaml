@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="WPF_LoginForm.ArtistsItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_LoginForm"
+             mc:Ignorable="d" 
+             d:DesignHeight="275" d:DesignWidth="200">
+    <Border Background="White" Padding="0.5">
+        <Grid Background="#333">
+            <StackPanel HorizontalAlignment="Center">
+                <Image Source="/Images/Album50Cent.jpg" Stretch="Fill" Margin="5 5 5 5"></Image>
+                <TextBlock Text="50 Cent" FontSize="25" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 12 0 0"></TextBlock>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>
