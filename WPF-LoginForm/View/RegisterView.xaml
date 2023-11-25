@@ -229,7 +229,7 @@
                         <Button Content="Log In" FontFamily="Montserrat" x:Name="doLogowania" Click="DoLogowania_click" ></Button>
                         
                     </StackPanel>
-                    <Button Content="Do maina" x:Name="DoMaina" Click="DoMaina_click" Width="121"></Button>
+                   
                 </StackPanel>
             </Grid>
         </Border>

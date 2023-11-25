@@ -12,9 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System;
+using System.Data.SQLite;
+using System.Windows;
+using WPF_LoginForm.Models;
+using WPF_LoginForm.Data;
 
 namespace WPF_LoginForm.View
 {
+
     /// <summary>
     /// Interaction logic for RegisterView.xaml
     /// </summary>
@@ -43,8 +49,35 @@ namespace WPF_LoginForm.View
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            string username = txtUser.Text.Trim();
+            string password = txtPass.Password.Trim();
 
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter both username and password.");
+                return;
+            }
+
+            DataAccess dataAccess = new DataAccess();
+
+            // Create a UserModel instance and set the properties
+            UserModel user = new UserModel
+            {
+                Username = username,
+                Password = password
+            };
+
+            // Call the RegisterUser method to attempt registration
+            if (dataAccess.RegisterUser(user))
+            {
+                // Registration successful, you can navigate to the login view or perform other actions
+                LoginView loginView = new LoginView();
+                loginView.Show();
+                this.Close();
+            }
+            // Registration failed - no need for an else block, as error messages are shown within the RegisterUser method
         }
+
         private void DoLogowania_click(object sender, RoutedEventArgs e)
         {
             //navigate to the login view
@@ -54,15 +87,7 @@ namespace WPF_LoginForm.View
             this.Close();
 
         }
-        private void DoMaina_click(object sender, RoutedEventArgs e)
-        {
-            //navigate to the login view
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            //close the current window
-            this.Close();
-
-        }
+        
 
        
         private int click_Count = 0;
