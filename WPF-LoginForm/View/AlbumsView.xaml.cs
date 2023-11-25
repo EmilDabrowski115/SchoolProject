@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_LoginForm.Viewmodel;
 
 namespace WPF_LoginForm.View
 {
@@ -23,6 +26,29 @@ namespace WPF_LoginForm.View
         public AlbumsView()
         {
             InitializeComponent();
+            //Tutaj binduje tak żeby te Albumy byly z AlbumItemControl
+            ObservableCollection<AlbumItemControl> items = new ObservableCollection<AlbumItemControl>
+            {
+            new AlbumItemControl { DataContext = "Element 1" },
+             // Dodaj więcej elementów, jeśli chcesz
+             };
+            debil.ItemsSource = items;
+
+
         }
+
+
     }
 }
+   
+
+
+
+       
+        
+    
+
+
+
+
+

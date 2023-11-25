@@ -52,7 +52,7 @@ namespace WPF_LoginForm
                 BrowceBtn.Content = "Przeglądaj";
                 SettingsBtn.Content = "Ustwawienia";
                 ActivityBtn.Content = "Aktywność";
-                SongsBtn.Content = "Piosenki";
+                SongsBtn.Content = "Utwory";
                 AlbumsBtn.Content = "Albumy";
                 ArtistsBtn.Content = "Artyści";
                 MainBlock.Text = "Główne:";

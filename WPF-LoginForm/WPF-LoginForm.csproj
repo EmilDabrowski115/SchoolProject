@@ -73,6 +73,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\AlbumItemControl.xaml.cs">
+      <DependentUpon>AlbumItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SongsItemControl.xaml.cs">
+      <DependentUpon>SongsItemControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Viewmodel\ActivityViewModel.cs" />
     <Compile Include="Viewmodel\AlbumsViewModel.cs" />
     <Compile Include="Viewmodel\ArtistsViewModel.cs" />
@@ -103,6 +109,14 @@
     <Compile Include="View\SongsView.xaml.cs">
       <DependentUpon>SongsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Controls\AlbumItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SongsItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -208,6 +222,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Main_tyl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Album50Cent.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

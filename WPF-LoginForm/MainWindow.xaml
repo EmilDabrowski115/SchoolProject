@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:WPF_LoginForm.Viewmodel"
         xmlns:view="clr-namespace:WPF_LoginForm.View"
+        
         xmlns:local="clr-namespace:WPF_LoginForm"
         mc:Ignorable="d"
         WindowStyle="None"
@@ -17,7 +18,6 @@
         <DataTemplate x:Name="BrowseTemplate" DataType="{x:Type viewmodels:BrowseViewModel}">
             <view:BrowseView DataContext="{Binding}"></view:BrowseView>
         </DataTemplate>
-
         <!--Widok Settings-->
         <DataTemplate x:Name="SettingsTemplate" DataType="{x:Type viewmodels:SettingsViewModel}">
             <view:SettingsView DataContext="{Binding}"></view:SettingsView>
@@ -145,7 +145,7 @@
                 <Button x:Name="ArtistsBtn"   Click="Artists_Click"   Content="Artists" Height="30"></Button>
             </StackPanel>
 
-
+            
 
 
         </Grid>
