@@ -218,7 +218,9 @@
     <Resource Include="Images\key-icon.png" />
     <Resource Include="Images\user-icon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Wymagania.txt" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Ikona.ico" />
   </ItemGroup>
