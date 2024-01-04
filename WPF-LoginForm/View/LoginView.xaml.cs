@@ -47,9 +47,26 @@ namespace WPF_LoginForm.View
         {
             Application.Current.Shutdown();
         }
+        private int click_Count = 0;
         private void LanguaeBtn_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            click_Count++;
+            if (click_Count % 2 == 1)
+            {
+                Username.Text = "Nazwa uzytkownika";
+                Password.Text = "Haslo";
+                btnLogin.Content = "Zaloguj sie";
+                registerButton.Content = "Zarejestuj sie";
+                DontHave.Text = "Nie masz konta? ";
+            }
+            else
+            {
+                Username.Text = "Username";
+                Password.Text = "Password";
+                btnLogin.Content = "Log In";
+                registerButton.Content = "Register";
+                DontHave.Text = "Dont have an account? ";
+            }
         }
 
 

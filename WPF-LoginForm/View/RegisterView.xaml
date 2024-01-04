@@ -82,7 +82,7 @@
                           Margin="0,-10,0,0">
 
 
-                <TextBlock Text="Vintage Music"
+                <TextBlock Text="Super Music"
                          Foreground="#fff"
                          FontSize="25"
                          FontWeight="Medium"
@@ -189,7 +189,7 @@
                              <Run Text="Already have an account?" />
                     </TextBlock>
 
-                    <Button x:Name="registerButton"
+                    <Button x:Name="LogInButton"
                             Content="Log In"
                             Background="Transparent"
                             Margin="0 0 0 0"
