@@ -12,9 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System;
 using System.Data.SQLite;
-using System.Windows;
 using WPF_LoginForm.Models;
 using WPF_LoginForm.Data;
 
@@ -37,7 +35,7 @@ namespace WPF_LoginForm.View
                 DragMove();
         }
 
-        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        private void MinimalizeBtn_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
@@ -46,6 +44,11 @@ namespace WPF_LoginForm.View
         {
             Application.Current.Shutdown();
         }
+        private void LanguaeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
@@ -90,30 +93,7 @@ namespace WPF_LoginForm.View
         
 
        
-        private int click_Count = 0;
-        private void ChangeLanguae_Click(object sender, RoutedEventArgs e)
-        {
-            click_Count++;
-            if (click_Count % 2 == 1)
-            {
-                Username.Text = "Użytkownik";
-                Password.Text = "Hasło";
-                btnRegister.Content = "Zarejestruj się";
-                HaveAccount.Text = "Masz już konto? ";
-                doLogowania.Content = "Zaloguj się";
-                ChangeLanguae.Content = "Zmień język";
-            }
-            else
-            {
-                Username.Text = "Username";
-                Password.Text = "Password";
-                btnRegister.Content = "Register";
-                HaveAccount.Text = "Have account already? ";
-                doLogowania.Content = "Log in";
-                ChangeLanguae.Content = "Change languae";
-            }
-           
-        }
+        
     }
 }
 /*

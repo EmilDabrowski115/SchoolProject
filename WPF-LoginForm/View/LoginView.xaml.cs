@@ -37,13 +37,8 @@ namespace WPF_LoginForm.View
             this.Close();
         }
 
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-                DragMove();
-        }
 
-        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        private void MinimalizeBtn_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
@@ -52,6 +47,13 @@ namespace WPF_LoginForm.View
         {
             Application.Current.Shutdown();
         }
+        private void LanguaeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+
+
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -71,7 +73,7 @@ namespace WPF_LoginForm.View
             {
                 // Login successful, you can navigate to the main view or perform other actions
                 // For now, let's show a message and close the current window
-                
+
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 // Navigate to the main view or perform other actions here
@@ -81,7 +83,7 @@ namespace WPF_LoginForm.View
             // Login failed - no need for an else block, as error messages are shown within the AuthenticateUser method
         }
 
-       
+
 
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
@@ -97,28 +99,6 @@ namespace WPF_LoginForm.View
             this.Close();
         }
 
-        private int click_Count=0;
-        private void ChangeLanguae_Click(object sender, RoutedEventArgs e)
-        {
-            click_Count++;
-            if (click_Count % 2 == 1)
-            {
-                ChangeLanguae.Content = "Zmień Język";
-                Username.Text = "Użytkownik";
-                Password.Text = "Hasło";
-                btnLogin.Content = "Zaloguj się";
-                DontHave.Text = "Nie masz konta?";
-                registerButton.Content = "Zarejestruj się";
-            }
-            else
-            {
-                ChangeLanguae.Content = "Change Languar";
-                Username.Text = "Username";
-                Password.Text = "Password";
-                btnLogin.Content = "Log In";
-                DontHave.Text = "Don't have an account?";
-                registerButton.Content = "Register";
-            }
-        }
+    
     }
 }

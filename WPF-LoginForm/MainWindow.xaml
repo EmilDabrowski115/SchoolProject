@@ -57,9 +57,9 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="130"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <!--To steruje stronami w srodku, NIE ZMIENIAC!!-->
@@ -71,7 +71,7 @@
             <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="5" Background="#333">
 
                 <!--Przyciski kołowe-->
-                <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top" Margin="10 0 0 0">
+                <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" Margin="10 0 0 0">
                     <Button Width="20" Height="20" Background="#cc3434"  Margin="0 0 0 0" Grid.Column="0" Grid.Row="0" Click="CloseBtn" Cursor="Hand">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -84,10 +84,10 @@
                         <Button.ToolTip>
                             <ToolTip>
                                 Zamknij!
-                            </ToolTip>                         
-                                </Button.ToolTip>                        
+                            </ToolTip>
+                        </Button.ToolTip>
                     </Button>
-                    
+
                     <Button x:Name="MinimalizeBtn" Click="MinimalizeBtn_Click" Width="20" Height="20" Background="#ffff66" Margin="7 0 0 0" Cursor="Hand">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
@@ -100,7 +100,7 @@
                         <Button.ToolTip>
                             <ToolTip>
                                 Minimalizuj!
-                                
+
                             </ToolTip>
                         </Button.ToolTip>
                     </Button>
@@ -116,14 +116,17 @@
                         <Button.ToolTip>
                             <ToolTip>
                                 Zmień język!
-                                
+
                             </ToolTip>
                         </Button.ToolTip>
                     </Button>
                 </StackPanel>
-
             </DockPanel>
-            <Border Grid.Row="1" CornerRadius="10" Background="white" Height="40" Width="155">
+            
+            <!-- Profil użytkownika -->
+            <TextBlock Text="Hello: User" FontSize="18" Grid.Row="1" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center"></TextBlock>
+            <!-- Szukaj -->
+            <Border Grid.Row="2" CornerRadius="10" Background="white" Height="40" Width="155">
                 <TextBox x:Name="SearchBox" Text="Search: " Height="40" Width="140" Margin="0 0 0 0" FontSize="24" BorderThickness="0" Padding="2" GotFocus="SearchGotFocus" LostFocus="SearchLostFocus">
                     <TextBox.Background>
                         <ImageBrush ImageSource="Images/Lupa.png" Stretch="Uniform" AlignmentX="Right" TileMode="None"/>
@@ -131,14 +134,14 @@
                 </TextBox>
             </Border>
 
-            <StackPanel Grid.Row="2">
+            <StackPanel Grid.Row="3">
                 <TextBlock x:Name="MainBlock" Text="Main:" FontSize="15" Foreground="White"></TextBlock>
                 <Button x:Name="BrowceBtn" Click="BrowceBtn_Click" Content="Browse" Height="30"></Button>
                 <Button Content="Activity" x:Name="ActivityBtn" Click="ActivityBtn_Click" Height="30"></Button>
                 <Button Content="Settings" Height="30" x:Name="SettingsBtn" Click="SettingsBtn_click"></Button>
 
             </StackPanel>
-            <StackPanel Grid.Row="3">
+            <StackPanel Grid.Row="4">
                 <TextBlock x:Name="YourMusicBlock" Text="Your music:" FontSize="15" Foreground="White"></TextBlock>
                 <Button x:Name="SongsBtn"  Click="SongsBtn_Click"  Content="Songs"   Height="30"></Button>
                 <Button x:Name="AlbumsBtn" Click="AlbumsBtn_Click" Content="Albums"  Height="30"></Button>
