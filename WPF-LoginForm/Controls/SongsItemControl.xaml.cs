@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_LoginForm.View;
 
 namespace WPF_LoginForm
 {
@@ -24,5 +25,16 @@ namespace WPF_LoginForm
         {
             InitializeComponent();
         }
+        
+        private void polubienieClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }
+
+
+
+
+

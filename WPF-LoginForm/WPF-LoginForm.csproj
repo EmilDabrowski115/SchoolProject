@@ -95,6 +95,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utwor.cs" />
     <Compile Include="Controls\AlbumItemControl.xaml.cs">
       <DependentUpon>AlbumItemControl.xaml</DependentUpon>
     </Compile>
@@ -221,7 +222,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\back-image.jpg" />
     <Resource Include="Images\key-icon.png" />
     <Resource Include="Images\user-icon.png" />
   </ItemGroup>
@@ -244,16 +244,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Back-Music.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Lupa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Main_tyl.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Album50Cent.jpg" />

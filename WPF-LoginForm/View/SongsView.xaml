@@ -6,13 +6,16 @@
              xmlns:local="clr-namespace:WPF_LoginForm"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="600">
-    
-    <Grid >
-        <ListBox Background="#245">
-            <local:SongsItemControl></local:SongsItemControl>
-        </ListBox>
 
+    <UserControl.Resources>
+        <!-- Lokalne ustawienie ItemTemplate dla ItemsControl -->
+        <DataTemplate x:Key="SongsItemTemplate">
+            <local:SongsItemControl />
+        </DataTemplate>
+    </UserControl.Resources>
 
-
+    <Grid>
+        <!-- Użyj ItemsControl do wyświetlenia listy utworów -->
+        <ItemsControl x:Name="itemsControl" ItemTemplate="{StaticResource SongsItemTemplate}" />
     </Grid>
 </UserControl>

@@ -9,26 +9,31 @@
     <Grid Background="#333">
         <Grid.ColumnDefinitions>
             <!--Tutaj chyba nic-->
-            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
             <!--Zdjecie albumu-->
-            <ColumnDefinition Width="70"></ColumnDefinition>
+            <ColumnDefinition Width="65"></ColumnDefinition>
             <!--Nazwa utoru-->
-            <ColumnDefinition Width="193"></ColumnDefinition>
+            <ColumnDefinition Width="190"></ColumnDefinition>
             <!--Nazwa albumu-->
             <ColumnDefinition Width="300"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <!--Lubiany-->
+            <ColumnDefinition Width="22"></ColumnDefinition>
+            
         </Grid.ColumnDefinitions>
         <!-- numer utworu na licie -->
-        <TextBlock Text="1." Foreground="White" VerticalAlignment="Center" FontSize="30" Grid.Column="0"></TextBlock>
+        
         <!-- Zdjęcie Albumu -->
-        <Image Source="/Images/Album50Cent.jpg" Stretch="Uniform" Grid.Column="1"></Image>
+        <Image Source="{Binding Image}" Stretch="Uniform" Grid.Column="1"></Image>
         <!-- Nazwa utworu + Artysty -->
         <StackPanel Orientation="Vertical" Grid.Column="2">
-            <TextBlock Text="Patiently Waiting" Grid.Column="2" FontSize="20" Foreground="White" Padding="2"></TextBlock>
-            <TextBlock Text="50 Cent" Foreground="White" Padding="2"></TextBlock>
+            <TextBlock Text="{Binding Tytul}" Grid.Column="2" FontSize="20" Foreground="White" Padding="2"></TextBlock>
+            <TextBlock Text="{Binding Wykonawca}" Foreground="White" Padding="2"></TextBlock>
         </StackPanel> 
         <!-- Nazwa albumu -->
-        <TextBlock Text="Get Rich or Die Tryin’" FontSize="20" VerticalAlignment="Center" Foreground="White" Grid.Column="3" Padding="23"></TextBlock>
+        <TextBlock Text="{Binding Album}" FontSize="20" VerticalAlignment="Center" Foreground="White" Grid.Column="3" Padding="23"></TextBlock>
+        <Button x:Name="polubienie" Click="polubienieClick" Grid.Column="4" Background="#cc3434" Content="&lt;3" Foreground="White">
+            
+        </Button>
 
 
     </Grid>

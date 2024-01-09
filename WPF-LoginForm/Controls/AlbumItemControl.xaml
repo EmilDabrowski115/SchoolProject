@@ -9,11 +9,11 @@
     <Border Background="White" Padding="0.5">
         <Grid Background="#333">
             <StackPanel HorizontalAlignment="Center">
-                <Image Source="/Images/Album50Cent.jpg" Stretch="Fill" Margin="5 5 5 5"></Image>
-                <TextBlock Text="Get Rich or Die Tryin’" FontSize="18" Foreground="White" HorizontalAlignment="Center" Margin="5 5 0 0"></TextBlock>
+                <Image Source="{Binding Image}" Stretch="Fill" Margin="5 5 5 5"></Image>
+                <TextBlock Text="{Binding Album}" FontSize="18" Foreground="White" HorizontalAlignment="Center" Margin="5 5 0 0"></TextBlock>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" TextBlock.FontSize="13">
                     <TextBlock Text="Artist: " Foreground="White"></TextBlock>
-                    <TextBlock Text="50 Cent" HorizontalAlignment="Center" Foreground="White"></TextBlock>
+                    <TextBlock Text="{Binding Wykonawca}" HorizontalAlignment="Center" Foreground="White"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </Grid>

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_LoginForm;
 
 namespace WPF_LoginForm.View
 {
@@ -25,11 +26,25 @@ namespace WPF_LoginForm.View
         public SongsView()
         {
             InitializeComponent();
+            InicjalizujListeUtworow();
+        }
 
 
-       
 
+
+        private void InicjalizujListeUtworow()
+    {
+        // Stwórz przykładowe utwory
+        var utwory = new List<Utwor>
+        {
+            new Utwor {ID="1.", Tytul = "Piosenka 1", Wykonawca = "Artysta 1", Album="Album", Image="/Images/Album50Cent.jpg" },
+            new Utwor {ID="2.", Tytul = "Piosenka 2", Wykonawca = "Artysta 2" , Album="Album", Image="/Images/Album50Cent.jpg"},
+            // Dodaj inne utwory
+        };
+            // Ustaw źródło danych dla ItemsControl
+            itemsControl.ItemsSource = utwory;
 
         }
-    }
 }
+}
+

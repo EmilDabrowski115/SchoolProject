@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_LoginForm;
 
 namespace WPF_LoginForm.View
 {
@@ -25,16 +26,17 @@ namespace WPF_LoginForm.View
         public ArtistsView()
         {
             InitializeComponent();
+            InicjalizujListeUtworow();
+        }
+        private void InicjalizujListeUtworow()
+        {
+            // Uzyskaj dostęp do listy utworów z klasy Utwor
+            List<Utwor> listaUtworow = Utwor.ListaUtworow();
 
-
-
-            ObservableCollection<ArtistsItemControl> items = new ObservableCollection<ArtistsItemControl>
-            {
-            new ArtistsItemControl { DataContext = "Element 1" },
-                // Dodaj więcej elementów, jeśli chcesz
-             };
-            ArtistsList.ItemsSource = items;
-
+            // Ustaw źródło danych dla ItemsControl na listę utworów
+            itemsControl.ItemsSource = listaUtworow;
         }
     }
+
 }
+

@@ -26,15 +26,15 @@ namespace WPF_LoginForm.View
         public AlbumsView()
         {
             InitializeComponent();
-            //Tutaj binduje tak żeby te Albumy byly z AlbumItemControl
-            ObservableCollection<AlbumItemControl> items = new ObservableCollection<AlbumItemControl>
-            {
-            new AlbumItemControl { DataContext = "Element 1" },
-             // Dodaj więcej elementów, jeśli chcesz
-             };
-            AlbumList.ItemsSource = items;
+            InicjalizujListeUtworow();
+        }
+        private void InicjalizujListeUtworow()
+        {
+            // Uzyskaj dostęp do listy utworów z klasy Utwor
+            List<Utwor> listaUtworow = Utwor.ListaUtworow();
 
-
+            // Ustaw źródło danych dla ItemsControl na listę utworów
+            itemsControl.ItemsSource = listaUtworow;
         }
 
 

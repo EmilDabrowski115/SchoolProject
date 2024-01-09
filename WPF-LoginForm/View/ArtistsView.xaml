@@ -6,12 +6,20 @@
              xmlns:local="clr-namespace:WPF_LoginForm"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="600">
-    <Grid Background="#245" d:Background="White">
-        <ItemsControl Name="ArtistsList" ItemsSource="{Binding}" Grid.Column="0">
+    <UserControl.Resources>
+        <!-- Lokalne ustawienie ItemTemplate dla ItemsControl -->
+        <DataTemplate x:Key="ArtistsItemTemplate">
+            <local:ArtistsItemControl />
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <!-- Użyj ItemsControl do wyświetlenia listy utworów -->
+        <ItemsControl x:Name="itemsControl" ItemTemplate="{StaticResource ArtistsItemTemplate}">
             <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Rows="2" Columns="3" />
-                </ItemsPanelTemplate>
+            <ItemsPanelTemplate>
+                <UniformGrid Rows="2" Columns="3" />
+            </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
 
