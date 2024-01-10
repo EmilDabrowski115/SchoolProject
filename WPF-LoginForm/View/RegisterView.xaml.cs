@@ -66,6 +66,27 @@ namespace WPF_LoginForm.View
             }
         }
 
+        private void WindowReSize(object sender, RoutedEventArgs e)
+        {
+            click_Count++;
+            if (click_Count % 2 == 1)
+            {
+                WindowState = WindowState.Normal;
+            }
+            else
+            {
+                WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                // Simulate a click on the login button
+                btnRegister_Click(sender, e);
+            }
+        }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {

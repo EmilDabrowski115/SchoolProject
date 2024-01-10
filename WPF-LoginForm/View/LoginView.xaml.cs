@@ -43,6 +43,19 @@ namespace WPF_LoginForm.View
             WindowState = WindowState.Minimized;
         }
 
+        private void WindowReSize(object sender, RoutedEventArgs e)
+        {
+            click_Count++;
+            if (click_Count % 2 == 1)
+            {
+                WindowState = WindowState.Normal;
+            }
+            else
+            {
+                WindowState = WindowState.Maximized;
+            }
+        }
+
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -69,7 +82,14 @@ namespace WPF_LoginForm.View
             }
         }
 
-
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                // Simulate a click on the login button
+                btnLogin_Click(sender, e);
+            }
+        }
 
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -85,17 +105,36 @@ namespace WPF_LoginForm.View
 
             DataAccess dataAccess = new DataAccess();
 
-            // Call the AuthenticateUser method to attempt login
-            if (dataAccess.AuthenticateUser(username, password))
-            {
-                // Login successful, you can navigate to the main view or perform other actions
-                // For now, let's show a message and close the current window
 
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+            Tuple<bool, bool> loginResult = dataAccess.AuthenticateUser(username, password);
+
+            // Instead of directly checking for a boolean, use Item1 from the tuple
+            if (loginResult.Item1)
+            {
+                if (loginResult.Item2)
+                {
+                    // Admin login successful
+                    MessageBox.Show("Admin login successful!");
+                    MainWindowAdmin mainWindow = new MainWindowAdmin();
+                    mainWindow.Show();
+                }
+                else
+                {
+                    // Regular user login successful
+                    MessageBox.Show("User login successful!");
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                }
+
+                // Continue with your navigation or other actions
+                
                 // Navigate to the main view or perform other actions here
                 // For now, let's just close the current window
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Login failed. Please check your credentials.");
             }
             // Login failed - no need for an else block, as error messages are shown within the AuthenticateUser method
         }

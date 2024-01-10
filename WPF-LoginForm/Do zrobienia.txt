@@ -1,0 +1,2 @@
+﻿-zmienic pozycje przycisku zmien jezyk i wyglad, mozesz w ustawieniach zrobic zmiana jezyka, i w oknie main window admin stworz jakis dashboard gdzie admin moze dodawac muzyke do bazy danych
+

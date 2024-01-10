@@ -95,6 +95,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MainWindowAdmin.xaml.cs">
+      <DependentUpon>MainWindowAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utwor.cs" />
     <Compile Include="Controls\AlbumItemControl.xaml.cs">
       <DependentUpon>AlbumItemControl.xaml</DependentUpon>
@@ -148,6 +151,10 @@
     <Page Include="Controls\SongsItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowAdmin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -251,6 +258,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Album50Cent.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Do zrobienia.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

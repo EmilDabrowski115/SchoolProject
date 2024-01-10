@@ -60,7 +60,7 @@ namespace WPF_LoginForm.Data
         }
 
 
-        public bool AuthenticateUser(string username, string password)
+        public Tuple<bool, bool> AuthenticateUser(string username, string password)
         {
             try
             {
@@ -74,22 +74,34 @@ namespace WPF_LoginForm.Data
 
                     if (matchingUsersCount > 0)
                     {
-                        MessageBox.Show("Login successful!");
-                        return true;
+
+                        if (username == "Admin" && password == "Admin")
+                        {
+                            return new Tuple<bool, bool>(true, true);
+                        }
+                        else 
+                        {
+                            return new Tuple<bool, bool>(true, false);
+
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Invalid username or password. Please try again.");
-                        return false;
+
+                        // Return a tuple with two bools indicating login failure
+                        return new Tuple<bool, bool>(false, false);
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                return false;
+
+                // Return a tuple with two bools indicating login failure
+                return new Tuple<bool, bool>(false, false);
             }
         }
+
 
 
 

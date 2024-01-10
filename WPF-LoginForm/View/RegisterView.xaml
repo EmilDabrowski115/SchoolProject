@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_LoginForm"
         mc:Ignorable="d"
-        Title="RegisterView" Height="350" Width="400"
+        Title="RegisterView" Height="550" Width="600"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        KeyDown="Window_KeyDown">
 
     <Grid Background="#fff">
         <Grid.RowDefinitions>
@@ -53,7 +54,7 @@
                         </ToolTip>
                     </Button.ToolTip>
                 </Button>
-                <Button x:Name="LanguaeBtn" Click="LanguaeBtn_Click" Width="20" Height="20" Background="#99cc66"  Margin="7 0 0 0" Cursor="Hand">
+                <Button x:Name="Resize" Click="WindowReSize" Width="20" Height="20" Background="#99cc66"  Margin="7 0 0 0" Cursor="Hand">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
