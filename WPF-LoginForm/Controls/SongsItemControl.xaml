@@ -15,9 +15,9 @@
             <!--Nazwa utoru-->
             <ColumnDefinition Width="190"></ColumnDefinition>
             <!--Nazwa albumu-->
-            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="280"></ColumnDefinition>
             <!--Lubiany-->
-            <ColumnDefinition Width="22"></ColumnDefinition>
+            <ColumnDefinition Width="23"></ColumnDefinition>
             
         </Grid.ColumnDefinitions>
         <!-- numer utworu na licie -->
@@ -31,7 +31,7 @@
         </StackPanel> 
         <!-- Nazwa albumu -->
         <TextBlock Text="{Binding Album}" FontSize="20" VerticalAlignment="Center" Foreground="White" Grid.Column="3" Padding="23"></TextBlock>
-        <Button x:Name="polubienie" Click="polubienieClick" Grid.Column="4" Background="#cc3434" Content="&lt;3" Foreground="White">
+        <Button x:Name="polubienie" Click="polubienieClick" Grid.Column="4" Background="White" Content="&lt;3" Foreground="#cc3434">
             
         </Button>
 

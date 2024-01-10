@@ -19,7 +19,7 @@
             </ComboBox>
         </Grid>
         <Grid Grid.Row="1">
-            <ContentControl x:Name="contentControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="7">
+            <ContentControl x:Name="contentControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <!-- Tutaj będzie aktualnie wybrany widok -->
             </ContentControl>
         </Grid>

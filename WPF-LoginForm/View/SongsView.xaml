@@ -15,7 +15,9 @@
     </UserControl.Resources>
 
     <Grid>
-        <!-- Użyj ItemsControl do wyświetlenia listy utworów -->
-        <ItemsControl x:Name="itemsControl" ItemTemplate="{StaticResource SongsItemTemplate}" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <!-- Użyj ItemsControl do wyświetlenia listy utworów -->
+            <ItemsControl x:Name="itemsControl" ItemTemplate="{StaticResource SongsItemTemplate}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="7" />
+        </ScrollViewer>
     </Grid>
 </UserControl>
