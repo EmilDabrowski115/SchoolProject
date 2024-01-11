@@ -260,7 +260,7 @@
     <Resource Include="Images\Album50Cent.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Do zrobienia.txt" />
+    <Resource Include="TODO.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
