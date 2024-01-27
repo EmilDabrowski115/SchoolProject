@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_LoginForm.View
+namespace WPF_LoginForm.AdminView
 {
     /// <summary>
-    /// Logika interakcji dla klasy ActivityModel.xaml
+    /// Logika interakcji dla klasy ZmienLogoStudiaPage.xaml
     /// </summary>
-    public partial class ActivityModel : UserControl
+    public partial class ZmienLogoStudiaPage : UserControl
     {
-        public ActivityModel()
+        public ZmienLogoStudiaPage()
         {
             InitializeComponent();
-        }
-        
-        private void BuyButton_Click(object sender, RoutedEventArgs e)
-        {
-           
         }
     }
 }

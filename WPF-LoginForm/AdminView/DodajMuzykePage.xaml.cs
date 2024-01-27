@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_LoginForm.View
+namespace WPF_LoginForm.AdminView
 {
     /// <summary>
-    /// Logika interakcji dla klasy ActivityModel.xaml
+    /// Logika interakcji dla klasy DodajMuzykePage.xaml
     /// </summary>
-    public partial class ActivityModel : UserControl
+    public partial class DodajMuzykePage : UserControl
     {
-        public ActivityModel()
+        public DodajMuzykePage()
         {
             InitializeComponent();
-        }
-        
-        private void BuyButton_Click(object sender, RoutedEventArgs e)
-        {
-           
         }
     }
 }

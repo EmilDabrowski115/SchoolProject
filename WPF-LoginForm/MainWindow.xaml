@@ -104,7 +104,7 @@
                             </ToolTip>
                         </Button.ToolTip>
                     </Button>
-                    <Button x:Name="Resize" Click="WindowReSize" Width="20" Height="20" Background="#99cc66"  Margin="7 0 0 0" Cursor="Hand">
+                    <Button x:Name="Resize" Click="LanguaeBtn_Click" Width="20" Height="20" Background="#99cc66"  Margin="7 0 0 0" Cursor="Hand">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
@@ -132,12 +132,38 @@
                         <ImageBrush ImageSource="Images/Lupa.png" Stretch="Uniform" AlignmentX="Right" TileMode="None"/>
                     </TextBox.Background>
                 </TextBox>
+
             </Border>
+
+            <ListView x:Name="UtworyListView"  Grid.Row="3" 
+              HorizontalAlignment="Left" VerticalAlignment="Top"
+              Width="400" Height="200" Margin="10"
+              IsTextSearchEnabled="True"
+              Visibility="Collapsed">
+                <!-- Początkowo ustawione na "Collapsed" -->
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}" Width="30"/>
+                        <GridViewColumn Header="Tytuł" DisplayMemberBinding="{Binding Tytul}" Width="150"/>
+                        <GridViewColumn Header="Wykonawca" DisplayMemberBinding="{Binding Wykonawca}" Width="100"/>
+                        <GridViewColumn Header="Album" DisplayMemberBinding="{Binding Album}" Width="100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+
+
+
+
+
+
+
+
 
             <StackPanel Grid.Row="3">
                 <TextBlock x:Name="MainBlock" Text="Main:" FontSize="15" Foreground="White"></TextBlock>
                 <Button x:Name="BrowceBtn" Click="BrowceBtn_Click" Content="Browse" Height="30"></Button>
-                <Button Content="Activity" x:Name="ActivityBtn" Click="ActivityBtn_Click" Height="30"></Button>
+                <Button Content="Shop" x:Name="ActivityBtn" Click="ActivityBtn_Click" Height="30"></Button>
                 <Button Content="Settings" Height="30" x:Name="SettingsBtn" Click="SettingsBtn_click"></Button>
 
             </StackPanel>

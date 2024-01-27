@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="WPF_LoginForm.AdminView.ZmienLogoStudiaPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_LoginForm.AdminView"
+             mc:Ignorable="d" 
+             d:DesignHeight="460" d:DesignWidth="600">
+    <Grid Background="White">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 -20 0 0">
+            <TextBlock Text="Obecne Logo:" FontSize="40" ></TextBlock>
+            <Image Margin="0 20 0 0" Source="C:\Users\Asus\Source\Repos\EmilDabrowski115\SchoolProject\WPF-LoginForm\Images\Logo.png" Width="250"></Image>
+            <Button Height="30" Content="Zmień logo" FontWeight="Bold" Background="#673AB7" Foreground="White"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

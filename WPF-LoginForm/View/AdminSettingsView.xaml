@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="WPF_LoginForm.View.AdminSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_LoginForm"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="600">
+    
+
+
+
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="460"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Row="0">
+            <!-- Dodaj muzykę -->
+            <Button Content="Dodaj Muzykę" 
+            Width="200" Height="30" FontSize="13" FontWeight="Bold" Background="#4CAF50" Foreground="White"
+            BorderThickness="0" Click="DodajMuzyke_Click"/>
+
+            <!-- Zmień muzykę -->
+            <Button Content="Zmień Muzykę"
+            Width="200" Height="30" FontSize="13" FontWeight="Bold" Background="#FFC107" Foreground="White"
+            BorderThickness="0" Click="ZmienMuzyke_Click"/>
+
+            <!-- Usuń muzykę -->
+            <Button Content="Usuń Muzykę" 
+            Width="200" Height="30" FontSize="13" FontWeight="Bold" Background="#F44336" Foreground="White"
+            BorderThickness="0" Click="UsunMuzyke_Click"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Grid.Row="1">
+            <!-- Awansuj na admina -->
+            <Button Content="Awansuj na Admina" 
+            Width="300" Height="30" FontSize="13" FontWeight="Bold" Background="#2196F3" Foreground="White"
+            BorderThickness="0" Click="AwansujNaAdmina_Click"/>
+
+            <!-- Zrzeknij się admina -->
+            <Button Content="Zrzeknij się Admina" 
+            Width="300" Height="30" FontSize="13" FontWeight="Bold" Background="#9E9E9E" Foreground="White"
+            BorderThickness="0" Click="ZrzeknijSieAdmina_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Top">
+            <Button Content="Zmień nazwę studia" 
+            Width="300" Height="30" FontSize="13" FontWeight="Bold" Background="#E91E63" Foreground="White"
+            BorderThickness="0" Click="ZmienNazweStudia_Click"/>
+
+            <!-- Zrzeknij się admina -->
+            <Button Content="Zmień logo aplikacji" 
+            Width="300" Height="30" FontSize="13" FontWeight="Bold" Background="#673AB7" Foreground="White"
+            BorderThickness="0" Click="ZmienLogoAplikacji_Click"/>
+        </StackPanel>
+        <Grid Grid.Row="3">
+            <Frame x:Name="AdminSettingsFrame"></Frame>
+        </Grid>
+
+
+
+
+
+
+
+
+    </Grid>
+</UserControl>

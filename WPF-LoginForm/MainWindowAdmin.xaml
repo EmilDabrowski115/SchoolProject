@@ -60,10 +60,11 @@
                 <RowDefinition Height="50"></RowDefinition>
                 <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition Height="130"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="130"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
             </Grid.RowDefinitions>
             <!--To steruje stronami w srodku, NIE ZMIENIAC!!-->
-            <ContentControl Content="{Binding}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5"></ContentControl>
+            <ContentControl Content="{Binding}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="6"></ContentControl>
 
            
 
@@ -104,7 +105,7 @@
                             </ToolTip>
                         </Button.ToolTip>
                     </Button>
-                    <Button x:Name="Resize" Click="WindowReSize" Width="20" Height="20" Background="#99cc66"  Margin="7 0 0 0" Cursor="Hand">
+                    <Button x:Name="Resize" Click="LanguaeBtn_Click" Width="20" Height="20" Background="#99cc66"  Margin="7 0 0 0" Cursor="Hand">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
@@ -137,15 +138,21 @@
             <StackPanel Grid.Row="3">
                 <TextBlock x:Name="MainBlock" Text="Main:" FontSize="15" Foreground="White"></TextBlock>
                 <Button x:Name="BrowceBtn" Click="BrowceBtn_Click" Content="Browse" Height="30"></Button>
-                <Button Content="Activity" x:Name="ActivityBtn" Click="ActivityBtn_Click" Height="30"></Button>
+                <Button Content="Shop" x:Name="ActivityBtn" Click="ActivityBtn_Click" Height="30"></Button>
                 <Button Content="Settings" Height="30" x:Name="SettingsBtn" Click="SettingsBtn_click"></Button>
 
             </StackPanel>
+            
+            
             <StackPanel Grid.Row="4">
                 <TextBlock x:Name="YourMusicBlock" Text="Your music:" FontSize="15" Foreground="White"></TextBlock>
                 <Button x:Name="SongsBtn"  Click="SongsBtn_Click"  Content="Songs"   Height="30"></Button>
                 <Button x:Name="AlbumsBtn" Click="AlbumsBtn_Click" Content="Albums"  Height="30"></Button>
                 <Button x:Name="ArtistsBtn"   Click="Artists_Click"   Content="Artists" Height="30"></Button>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Background="#333">
+                <TextBlock Text="Admin: " FontSize="15" Foreground="White"></TextBlock>
+                <Button x:Name="AdminBtn" Click="AdminBtn_Click" Content="Admin settings" Height="30"></Button>
             </StackPanel>
 
             

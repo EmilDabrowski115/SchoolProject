@@ -28,6 +28,7 @@ namespace WPF_LoginForm
         public MainWindowAdmin()
         {
             InitializeComponent();
+            DataContext = new BrowseViewModel();
         }
         private void CloseBtn(object sender, RoutedEventArgs e)
         {
@@ -46,18 +47,9 @@ namespace WPF_LoginForm
             WindowState = WindowState.Minimized;
         }
 
-        private void WindowReSize(object sender, RoutedEventArgs e)
-        {
-            click_Count++;
-            if (click_Count % 2 == 1)
-            {
-                WindowState = WindowState.Normal;
-            }
-            else
-            {
-                WindowState = WindowState.Maximized;
-            }
-        }
+
+
+       
         private int click_Count = 0;
         private void LanguaeBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -66,7 +58,7 @@ namespace WPF_LoginForm
             {
                 BrowceBtn.Content = "Przeglądaj";
                 SettingsBtn.Content = "Ustwawienia";
-                ActivityBtn.Content = "Aktywność";
+                ActivityBtn.Content = "Sklep";
                 SongsBtn.Content = "Utwory";
                 AlbumsBtn.Content = "Albumy";
                 ArtistsBtn.Content = "Artyści";
@@ -78,7 +70,7 @@ namespace WPF_LoginForm
             {
                 BrowceBtn.Content = "Browse";
                 SettingsBtn.Content = "Settings";
-                ActivityBtn.Content = "Activity";
+                ActivityBtn.Content = "Shop";
                 SongsBtn.Content = "Songs";
                 AlbumsBtn.Content = "Albums";
                 ArtistsBtn.Content = "Artists";
@@ -126,10 +118,15 @@ namespace WPF_LoginForm
         {
             DataContext = new ArtistsViewModel();
         }
+        private void AdminBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new AdminSettingsView();
+        }
+
 
 
         #endregion
 
-       
+
     }
 }

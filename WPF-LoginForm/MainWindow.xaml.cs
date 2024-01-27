@@ -28,8 +28,22 @@ namespace WPF_LoginForm
         public MainWindow()
         {
             InitializeComponent();
+            InicjalizujListeUtworow();
+            DataContext = new BrowseViewModel();
+            
+
         }
-        private void CloseBtn(object sender, RoutedEventArgs e)
+
+        private void InicjalizujListeUtworow()
+        {
+            // Uzyskaj dostęp do listy utworów z klasy Utwor
+            List<Utwor> listaUtworow = Utwor.ListaUtworow();
+        }
+
+
+
+
+    private void CloseBtn(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
@@ -66,7 +80,7 @@ namespace WPF_LoginForm
             {
                 BrowceBtn.Content = "Przeglądaj";
                 SettingsBtn.Content = "Ustwawienia";
-                ActivityBtn.Content = "Aktywność";
+                ActivityBtn.Content = "Sklep";
                 SongsBtn.Content = "Utwory";
                 AlbumsBtn.Content = "Albumy";
                 ArtistsBtn.Content = "Artyści";
@@ -78,7 +92,7 @@ namespace WPF_LoginForm
             {
                 BrowceBtn.Content = "Browse";
                 SettingsBtn.Content = "Settings";
-                ActivityBtn.Content = "Activity";
+                ActivityBtn.Content = "Shop";
                 SongsBtn.Content = "Songs";
                 AlbumsBtn.Content = "Albums";
                 ArtistsBtn.Content = "Artists";

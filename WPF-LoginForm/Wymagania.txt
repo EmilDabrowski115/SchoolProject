@@ -64,13 +64,13 @@ Zrobione:
 - gdy startujemy aplikacje, a bazy nie ma, to tworzona jest baza standardowa
 - klient zalogowany ma dane osobowe i adresowe w bazie, ladujemy automatycznie
 - klient niezalogowany musi swoje dane podac
+- moze byc, ze layout będzie się ustawiac automatycznie po zalogowaniu
 
 
 +- Łatwe do zrobienia:
 - dodatkowo gdzies niech istnieje przycisk do regulaminu, regulamin ładujemy z pliku tekstowego, ale gdy pliku nie ma to przywracamy go z jakąś krótką formułką
 - chcialbym miec mozliwosc wyboru wersji jezykowej w moim programie
 - chcialbym miec dwa layouty: jasny na dzień i np ciemny na noc
-- moze byc, ze layout będzie się ustawiac automatycznie po zalogowaniu
 - dobrze by bylo, aby logo aplikacji mozna bylo gdzies zmienic
 - uwaga, chcialbym moc edytowac nazwe mojego studia
 - chcialbym miec akclerator czyli w systemie skroty klawiszowe

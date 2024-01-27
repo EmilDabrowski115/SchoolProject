@@ -95,6 +95,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminView\AwansujNaAdminaPage.xaml.cs">
+      <DependentUpon>AwansujNaAdminaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView\DodajMuzykePage.xaml.cs">
+      <DependentUpon>DodajMuzykePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView\UsunMuzykePage.xaml.cs">
+      <DependentUpon>UsunMuzykePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView\ZmienLogoStudiaPage.xaml.cs">
+      <DependentUpon>ZmienLogoStudiaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView\ZmienMuzykePage.xaml.cs">
+      <DependentUpon>ZmienMuzykePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView\ZmienNazweStudiaPage.xaml.cs">
+      <DependentUpon>ZmienNazweStudiaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminView\ZrzeknijSieAdminaPage.xaml.cs">
+      <DependentUpon>ZrzeknijSieAdminaPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindowAdmin.xaml.cs">
       <DependentUpon>MainWindowAdmin.xaml</DependentUpon>
     </Compile>
@@ -119,6 +140,9 @@
     <Compile Include="View\ActivityModel.xaml.cs">
       <DependentUpon>ActivityModel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AdminSettingsView.xaml.cs">
+      <DependentUpon>AdminSettingsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AlbumsView.xaml.cs">
       <DependentUpon>AlbumsView.xaml</DependentUpon>
     </Compile>
@@ -140,6 +164,34 @@
     <Compile Include="View\SongsView.xaml.cs">
       <DependentUpon>SongsView.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminView\AwansujNaAdminaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminView\DodajMuzykePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminView\UsunMuzykePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminView\ZmienLogoStudiaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminView\ZmienMuzykePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminView\ZmienNazweStudiaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminView\ZrzeknijSieAdminaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\AlbumItemControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +221,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\ActivityModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminSettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -260,7 +316,14 @@
     <Resource Include="Images\Album50Cent.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Do zrobienia.txt" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZrobieniaDo.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Regulamin.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
