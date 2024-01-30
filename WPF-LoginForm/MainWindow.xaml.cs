@@ -73,7 +73,7 @@ namespace WPF_LoginForm
             }
         }
         private int click_Count = 0;
-        private void LanguaeBtn_Click(object sender, RoutedEventArgs e)
+        private void xd(object sender, RoutedEventArgs e)
         {
             click_Count++;
             if (click_Count % 2 == 1)
@@ -103,8 +103,20 @@ namespace WPF_LoginForm
         }
 
 
-        
-        
+
+        private void LanguaeBtn_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+
+
+
+
+
+
+
+
 
 
 
