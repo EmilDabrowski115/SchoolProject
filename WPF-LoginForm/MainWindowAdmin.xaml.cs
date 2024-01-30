@@ -47,9 +47,21 @@ namespace WPF_LoginForm
             WindowState = WindowState.Minimized;
         }
 
+        private void WindowReSize(object sender, RoutedEventArgs e)
+        {
+            click_Count++;
+            if (click_Count % 2 == 1)
+            {
+                WindowState = WindowState.Normal;
+            }
+            else
+            {
+                WindowState = WindowState.Maximized;
+            }
+        }
 
 
-       
+
         private int click_Count = 0;
         private void LanguaeBtn_Click(object sender, RoutedEventArgs e)
         {

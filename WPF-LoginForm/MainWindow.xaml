@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:WPF_LoginForm.Viewmodel"
         xmlns:view="clr-namespace:WPF_LoginForm.View"
-        
-        xmlns:local="clr-namespace:WPF_LoginForm"
         mc:Ignorable="d"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
@@ -104,7 +102,7 @@
                             </ToolTip>
                         </Button.ToolTip>
                     </Button>
-                    <Button x:Name="Resize" Click="LanguaeBtn_Click" Width="20" Height="20" Background="#99cc66"  Margin="7 0 0 0" Cursor="Hand">
+                    <Button x:Name="Resize" Click="WindowReSize" Width="20" Height="20" Background="#99cc66"  Margin="7 0 0 0" Cursor="Hand">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Grid>
