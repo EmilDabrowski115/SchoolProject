@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Navigation;
 using WPF_LoginForm.Data;
 using static WPF_LoginForm.Data.DataAccess;
+using WPF_LoginForm.Models;
 
 namespace WPF_LoginForm.View
 {
@@ -23,9 +24,31 @@ namespace WPF_LoginForm.View
 
     public partial class LoginView : Window
     {
+        
+
+
         public LoginView()
         {
             InitializeComponent();
+
+        }
+
+        private void GetStudioInfo(object sender, RoutedEventArgs e)
+        {
+            DataAccess dataAccess = new DataAccess();
+            StudioInfo studioInfo = dataAccess.GetStudioInfo();
+
+            if (studioInfo != null)
+            {
+                Models.StudioInfo studioInfoModel = /* existing instance of StudioInfo model */;
+
+                studioInfoModel.Id = studioInfo.Id;
+                studioInfoModel.Nazwa = studioInfo.Nazwa;
+                studioInfoModel.Logo = studioInfo.Logo;
+            }
+
+
+
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
@@ -117,7 +140,7 @@ namespace WPF_LoginForm.View
                     // Admin login successful
                     MessageBox.Show("Admin login successful!");
 
-                    UserSettings userSettings = new UserSettings { Username = username };
+                    Models.UserSettings userSettings = new Models.UserSettings { Username = username };
                     userSettings.Save();
                     MainWindowAdmin mainWindow = new MainWindowAdmin();
                     mainWindow.Show();
@@ -127,7 +150,7 @@ namespace WPF_LoginForm.View
                     // Regular user login successful
                     MessageBox.Show("User login successful!");
 
-                    UserSettings userSettings = new UserSettings { Username = username };
+                    Models.UserSettings userSettings = new Models.UserSettings { Username = username };
                     userSettings.Save();
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();

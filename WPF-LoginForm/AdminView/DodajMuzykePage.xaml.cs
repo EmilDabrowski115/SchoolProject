@@ -80,7 +80,7 @@ namespace WPF_LoginForm.AdminView
             byte[] zdjBytes = null; // Tutaj musisz przekształcić ścieżkę pliku zdj na byte[], ale wymaga to obsługi w XAML.
 
             // Utwórz obiekt MusicRecord
-            MusicRecord musicRecord = new MusicRecord
+            Models.MusicRecord musicRecord = new Models.MusicRecord
             {
                 NazwaUtworu = nazwaUtworu,
                 Album = album,

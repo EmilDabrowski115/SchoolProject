@@ -32,7 +32,7 @@ namespace WPF_LoginForm
             InicjalizujListeUtworow();
             DataContext = new BrowseViewModel();
 
-            UserSettings userSettings = new UserSettings();
+            Models.UserSettings userSettings = new Models.UserSettings();
             userSettings.Load();
 
             // Update the TextBlock with the username

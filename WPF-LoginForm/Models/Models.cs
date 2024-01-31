@@ -12,4 +12,36 @@ namespace WPF_LoginForm.Models
         public string Username { get; set; }
         public string Password { get; set; }
     }
+
+    public class UserSettings
+    {
+        public string Username { get; set; }
+
+        public void Save()
+        {
+            Properties.Settings.Default.Username = Username;
+            Properties.Settings.Default.Save();
+        }
+
+        public void Load()
+        {
+            Username = Properties.Settings.Default.Username;
+        }
+    }
+
+    public class StudioInfo
+    { 
+        public int Id { get; set; } 
+        public string Nazwa { get; set; }
+        public byte[] Logo { get; set; }
+    }
+
+    public class MusicRecord
+    {
+        public int Id { get; set; }
+        public string NazwaUtworu { get; set; }
+        public string Album { get; set; }
+        public string Wykonawca { get; set; }
+        public byte[] ZDJ { get; set; }
+    }
 }

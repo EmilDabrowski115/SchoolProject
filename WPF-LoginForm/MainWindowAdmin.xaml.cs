@@ -31,7 +31,7 @@ namespace WPF_LoginForm
             InitializeComponent();
             DataContext = new BrowseViewModel();
 
-            UserSettings userSettings = new UserSettings();
+            Models.UserSettings userSettings = new Models.UserSettings();
             userSettings.Load();
 
             // Update the TextBlock with the username

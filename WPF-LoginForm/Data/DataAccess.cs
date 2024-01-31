@@ -231,12 +231,26 @@ namespace WPF_LoginForm.Data
             }
         }
 
-        public class MusicRecord
+        public StudioInfo GetStudioInfo()
         {
-            public string NazwaUtworu { get; set; }
-            public string Album { get; set; }
-            public string Wykonawca { get; set; }
-            public byte[] ZDJ { get; set; }
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Retrieve studio information from the database
+                    string query = "SELECT * FROM StudioInfo LIMIT 1";
+                    StudioInfo studioInfo = connection.QueryFirstOrDefault<StudioInfo>(query);
+
+                    return studioInfo;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
         }
 
 
@@ -324,25 +338,32 @@ namespace WPF_LoginForm.Data
             }
         }
 
-
-
-
-
-        public class UserSettings
+        public List<MusicRecord> GetAllMusicRecords()
         {
-            public string Username { get; set; }
-
-            public void Save()
+            try
             {
-                Properties.Settings.Default.Username = Username;
-                Properties.Settings.Default.Save();
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Pobierz wszystkie utwory z bazy danych
+                    string query = "SELECT * FROM BazaUtworow";
+                    List<MusicRecord> musicRecords = connection.Query<MusicRecord>(query).ToList();
+
+                    return musicRecords;
+                }
             }
-
-            public void Load()
+            catch (Exception ex)
             {
-                Username = Properties.Settings.Default.Username;
+                MessageBox.Show("Wystąpił błąd: " + ex.Message);
+                return null;
             }
         }
+
+
+
+
+        
 
 
 
