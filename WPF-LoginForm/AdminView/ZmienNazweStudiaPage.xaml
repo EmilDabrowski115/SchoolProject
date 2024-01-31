@@ -9,10 +9,10 @@
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center" Margin="0 50 0 0">
             <TextBlock Text="Obecna Nazwa Studia:" FontSize="40"></TextBlock>
-            <TextBlock Text="Super Studio" HorizontalAlignment="Center" FontSize="30"></TextBlock>
+            <TextBlock x:Name="StudioNameBlock"  HorizontalAlignment="Center" FontSize="30"></TextBlock>
             <TextBlock Text="Nowa nazwa: " FontSize="40"></TextBlock>
-            <TextBox FontSize="40" Height="50" Width="300"></TextBox>
-            <Button Content="Zmień" FontWeight="Bold" Background="#E91E63" Height="30" Foreground="White" ></Button>
+            <TextBox x:Name="NewStudioNameBox" FontSize="40" Height="50" Width="300"></TextBox>
+            <Button Click="OnUpdateStudioNameClick" Content="Zmień" FontWeight="Bold" Background="#E91E63" Height="30" Foreground="White"></Button>
         </StackPanel>
     </Grid>
 </UserControl>

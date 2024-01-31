@@ -32,8 +32,8 @@ namespace WPF_LoginForm.Models
     public class StudioInfo
     { 
         public int Id { get; set; } 
-        public string Nazwa { get; set; }
-        public byte[] Logo { get; set; }
+        public string NazwaStudia { get; set; }
+        public byte[] LogoStudia { get; set; }
     }
 
     public class MusicRecord

@@ -24,32 +24,38 @@ namespace WPF_LoginForm.View
 
     public partial class LoginView : Window
     {
-        
+
+        Models.StudioInfo studioInfoModel;  // Declare at class level
 
 
         public LoginView()
         {
+            
             InitializeComponent();
+            GetStudioInfo();
+
 
         }
 
-        private void GetStudioInfo(object sender, RoutedEventArgs e)
+        private void GetStudioInfo()
         {
             DataAccess dataAccess = new DataAccess();
             StudioInfo studioInfo = dataAccess.GetStudioInfo();
 
             if (studioInfo != null)
             {
-                Models.StudioInfo studioInfoModel = new Models.StudioInfo(); // Instantiate StudioInfo model
+                studioInfoModel = new Models.StudioInfo
+                {
+                    Id = studioInfo.Id,
+                    NazwaStudia = studioInfo.NazwaStudia,
+                    LogoStudia = studioInfo.LogoStudia
+                };
+                StudioNameBlock.Text = studioInfoModel.NazwaStudia;
 
-                // Copy data from DataAccess.StudioInfo to Models.StudioInfo
-                studioInfoModel.Id = studioInfo.Id;
-                studioInfoModel.Nazwa = studioInfo.Nazwa;
-                studioInfoModel.Logo = studioInfo.Logo;
-
-                // Now you can use the studioInfoModel as needed
-                // For example, you can pass it to another method or update the UI
             }
+
+
+
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)

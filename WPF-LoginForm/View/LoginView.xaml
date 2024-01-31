@@ -83,7 +83,7 @@
                           Margin="0,-10,0,0">
                           
 
-            <TextBlock Text="Super Music"
+            <TextBlock x:Name="StudioNameBlock"
                          Foreground="#fff"
                          FontSize="25"
                          FontWeight="Medium"
