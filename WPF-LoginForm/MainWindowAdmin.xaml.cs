@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF_LoginForm.View;
 using WPF_LoginForm.Viewmodel;
+using static WPF_LoginForm.Data.DataAccess;
 
 namespace WPF_LoginForm
 {
@@ -29,6 +30,12 @@ namespace WPF_LoginForm
         {
             InitializeComponent();
             DataContext = new BrowseViewModel();
+
+            UserSettings userSettings = new UserSettings();
+            userSettings.Load();
+
+            // Update the TextBlock with the username
+            HelloTextBlock.Text = $"Hello: {userSettings.Username}";
         }
         private void CloseBtn(object sender, RoutedEventArgs e)
         {

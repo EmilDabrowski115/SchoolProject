@@ -8,6 +8,8 @@ using Dapper;
 using System.Windows;
 using WPF_LoginForm.Models;
 using System.IO;
+using System.Security.Cryptography;
+
 
 
 namespace WPF_LoginForm.Data
@@ -16,11 +18,18 @@ namespace WPF_LoginForm.Data
     {
         private static string connectionString = $"Data Source={Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\")}\\BazaDanych.sqlite;Version=3;";
 
+
+        public event Action<string> UserAuthenticated;
+
+        private void OnUserAuthenticated(string username)
+        {
+            UserAuthenticated?.Invoke(username);
+        }
+
         public bool RegisterUser(UserModel user)
         {
             try
             {
-                MessageBox.Show($"Current Directory: {AppDomain.CurrentDomain.BaseDirectory}");
 
                 using (SQLiteConnection connection = new SQLiteConnection(connectionString))
                 {
@@ -36,9 +45,11 @@ namespace WPF_LoginForm.Data
                         return false;
                     }
 
+                    string userpassword = user.Password;
+                    string HashedPassword = DoubleSHA1Hash(userpassword);
                     // Insert new user
-                    string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
-                    int rowsAffected = connection.Execute(insertQuery, new { Username = user.Username, Password = user.Password });
+                    string insertQuery = "INSERT INTO Users (Username, Password, IsAdmin) VALUES (@Username, @Password, 0)";
+                    int rowsAffected = connection.Execute(insertQuery, new { Username = user.Username, Password = HashedPassword });
 
                     if (rowsAffected > 0)
                     {
@@ -67,9 +78,10 @@ namespace WPF_LoginForm.Data
                 {
                     connection.Open();
 
+                    string hashedpassword = DoubleSHA1Hash(password);
                     // Check if the username and password match
                     string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password";
-                    int matchingUsersCount = connection.ExecuteScalar<int>(checkQuery, new { Username = username, Password = password });
+                    int matchingUsersCount = connection.ExecuteScalar<int>(checkQuery, new { Username = username, Password = hashedpassword });
 
                     if (matchingUsersCount > 0)
                     {
@@ -79,10 +91,12 @@ namespace WPF_LoginForm.Data
 
                         if (isAdmin == 1)
                         {
+
                             return new Tuple<bool, bool>(true, true);
                         }
                         else 
                         {
+
                             return new Tuple<bool, bool>(true, false);
 
                         }
@@ -155,6 +169,20 @@ namespace WPF_LoginForm.Data
             }
         }
 
+        static string DoubleSHA1Hash(string input)
+        {
+            // First SHA-1 hash
+            byte[] firstHashBytes = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(input));
+            string firstHash = BitConverter.ToString(firstHashBytes).Replace("-", "").ToLower();
+
+            // Second SHA-1 hash
+            byte[] secondHashBytes = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(firstHash));
+            string secondHash = BitConverter.ToString(secondHashBytes).Replace("-", "").ToLower();
+
+            return secondHash;
+        }
+
+
         public Tuple<bool, bool> RemoveAdmin(string username)
         {
             try
@@ -204,7 +232,21 @@ namespace WPF_LoginForm.Data
         }
 
 
+        public class UserSettings
+        {
+            public string Username { get; set; }
 
+            public void Save()
+            {
+                Properties.Settings.Default.Username = Username;
+                Properties.Settings.Default.Save();
+            }
+
+            public void Load()
+            {
+                Username = Properties.Settings.Default.Username;
+            }
+        }
 
 
 

@@ -124,7 +124,7 @@
             </DockPanel>
             
             <!-- Profil użytkownika -->
-            <TextBlock Text="Hello: User" FontSize="18" Grid.Row="1" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock x:Name="HelloTextBlock" FontSize="18" Grid.Row="1" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center"></TextBlock>
             <!-- Szukaj -->
             <Border Grid.Row="2" CornerRadius="10" Background="white" Height="40" Width="155">
                 <TextBox x:Name="SearchBox" Text="Search: " Height="40" Width="140" Margin="0 0 0 0" FontSize="24" BorderThickness="0" Padding="2" GotFocus="SearchGotFocus" LostFocus="SearchLostFocus">

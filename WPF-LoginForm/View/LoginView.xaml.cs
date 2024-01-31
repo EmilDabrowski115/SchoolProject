@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using WPF_LoginForm.Data;
+using static WPF_LoginForm.Data.DataAccess;
 
 namespace WPF_LoginForm.View
 {
@@ -115,6 +116,9 @@ namespace WPF_LoginForm.View
                 {
                     // Admin login successful
                     MessageBox.Show("Admin login successful!");
+
+                    UserSettings userSettings = new UserSettings { Username = username };
+                    userSettings.Save();
                     MainWindowAdmin mainWindow = new MainWindowAdmin();
                     mainWindow.Show();
                 }
@@ -122,6 +126,9 @@ namespace WPF_LoginForm.View
                 {
                     // Regular user login successful
                     MessageBox.Show("User login successful!");
+
+                    UserSettings userSettings = new UserSettings { Username = username };
+                    userSettings.Save();
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                 }
