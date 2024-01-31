@@ -1,0 +1,13 @@
+﻿Czyli to ja co mam do zrobienia teraz:
+-w ustawieniach zmienic jezyk,
+ 	tlo aplikacji
+	wyglad przyciskow
+	dodac regulamin
+-w admin panel: 
+	podpiac dodaj muzyke do bazy danychm 
+	zmien muzyke w bazie danych
+	usun muzyke w bazie
+	dodac opcje awansowac uzytkownikow na admina
+	usuwac admina
+	zmien nawe studia
+	zmien logo aplikacji

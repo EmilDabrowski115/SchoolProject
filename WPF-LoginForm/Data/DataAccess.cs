@@ -59,7 +59,6 @@ namespace WPF_LoginForm.Data
             }
         }
 
-
         public Tuple<bool, bool> AuthenticateUser(string username, string password)
         {
             try
@@ -74,8 +73,11 @@ namespace WPF_LoginForm.Data
 
                     if (matchingUsersCount > 0)
                     {
+                        // Check if the user is an admin based on the IsAdmin column
+                        string isAdminQuery = "SELECT IsAdmin FROM Users WHERE Username = @Username";
+                        int isAdmin = connection.ExecuteScalar<int>(isAdminQuery, new { Username = username });
 
-                        if (username == "Admin" && password == "Admin")
+                        if (isAdmin == 1)
                         {
                             return new Tuple<bool, bool>(true, true);
                         }
@@ -84,10 +86,11 @@ namespace WPF_LoginForm.Data
                             return new Tuple<bool, bool>(true, false);
 
                         }
+
+
                     }
                     else
                     {
-
                         // Return a tuple with two bools indicating login failure
                         return new Tuple<bool, bool>(false, false);
                     }
@@ -101,6 +104,110 @@ namespace WPF_LoginForm.Data
                 return new Tuple<bool, bool>(false, false);
             }
         }
+
+        public Tuple<bool, bool> AddAdmin(string username)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Check if the username and password match
+                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
+                    int matchingUsersCount = connection.ExecuteScalar<int>(checkQuery, new { Username = username });
+
+                    if (matchingUsersCount > 0)
+                    {
+                        // Check if the user is an admin based on the IsAdmin column
+                        string isAdminQuery = "SELECT IsAdmin FROM Users WHERE Username = @Username";
+                        int isAdmin = connection.ExecuteScalar<int>(isAdminQuery, new { Username = username });
+
+                        if (isAdmin == 1)
+                        {
+                            return new Tuple<bool, bool>(true, false);
+                        }
+                        else
+                        {
+                            // Update IsAdmin to 1 for the specified username
+                            string updateQuery = "UPDATE Users SET IsAdmin = 1 WHERE Username = @Username";
+                            connection.Execute(updateQuery, new { Username = username });
+
+                            // Return a tuple indicating successful admin addition
+                            return new Tuple<bool, bool>(true, true);
+                        }
+
+
+                    }
+                    else
+                    {
+                        // Return a tuple with two bools indicating login failure
+                        return new Tuple<bool, bool>(false, false);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+
+                // Return a tuple with two bools indicating login failure
+                return new Tuple<bool, bool>(false, false);
+            }
+        }
+
+        public Tuple<bool, bool> RemoveAdmin(string username)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Check if the username and password match
+                    string checkQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
+                    int matchingUsersCount = connection.ExecuteScalar<int>(checkQuery, new { Username = username });
+
+                    if (matchingUsersCount > 0)
+                    {
+                        // Check if the user is an admin based on the IsAdmin column
+                        string isAdminQuery = "SELECT IsAdmin FROM Users WHERE Username = @Username";
+                        int isAdmin = connection.ExecuteScalar<int>(isAdminQuery, new { Username = username });
+
+                        if (isAdmin == 1)
+                        {
+                            string updateQuery = "UPDATE Users SET IsAdmin = 0 WHERE Username = @Username";
+                            connection.Execute(updateQuery, new { Username = username });
+                            return new Tuple<bool, bool>(true, true);
+                        }
+                        else
+                        {
+                            // Return a tuple indicating successful admin addition
+                            return new Tuple<bool, bool>(true, false);
+                        }
+
+
+                    }
+                    else
+                    {
+                        // Return a tuple with two bools indicating login failure
+                        return new Tuple<bool, bool>(false, false);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+
+                // Return a tuple with two bools indicating login failure
+                return new Tuple<bool, bool>(false, false);
+            }
+        }
+
+
+
+
+
+
 
 
 
