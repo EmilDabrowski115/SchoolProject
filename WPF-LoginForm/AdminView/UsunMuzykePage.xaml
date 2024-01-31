@@ -4,15 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_LoginForm.AdminView"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:ResxLocalizationProvider.DefaultAssembly="WPF-LoginForm"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="460" d:DesignWidth="600">
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center" Margin="0 75 0 0">
-            <TextBlock Text="Usuń Muzykę:" FontSize="40"></TextBlock>
-            <TextBlock Text="Wpisz Nazwę Utowru:" FontSize="20"></TextBlock>
+            <TextBlock Name="UsunMuzyke" Text="{lex:Loc}" FontSize="40"></TextBlock>
+            <TextBlock Name="WpiszNazweUtworu" Text="{lex:Loc}" FontSize="20"></TextBlock>
             <TextBox x:Name="Utwor"></TextBox>
 
-            <Button Content="Usuń" Click="UsunUtwor" FontWeight="Bold" Background="#F44336" Foreground="White"></Button>
+            <Button Name="Usun" Content="{lex:Loc}" Click="UsunUtwor" FontWeight="Bold" Background="#F44336" Foreground="White"></Button>
 
 
 

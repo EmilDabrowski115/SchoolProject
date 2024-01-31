@@ -4,27 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_LoginForm.AdminView"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:ResxLocalizationProvider.DefaultAssembly="WPF-LoginForm"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="460" d:DesignWidth="600">
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center"  Margin="0 75 0 0">
-            <TextBlock Text="Dodaj Muzykę:" FontSize="40"></TextBlock>
-            <TextBlock Text="Wpisz Nazwę Utowru:"></TextBlock>
-            <TextBox x:Name="Utwor"></TextBox>
-            <TextBlock Text="Wpisz Album:"></TextBlock>
-            <TextBox x:Name="Album"> </TextBox>
-            <TextBlock Text="Wpisz Wykonawcę:"></TextBlock>
+            <TextBlock Name="DodajMuzyke" Text="{lex:Loc}" FontSize="40"></TextBlock>
+            <TextBlock Name="WpiszNazweUtworu" Text="{lex:Loc}"></TextBlock>
+            <TextBox Name="Utwor"></TextBox>
+            <TextBlock Name="WpiszAlbum" Text="{lex:Loc}"></TextBlock>
+            <TextBox Name="Album"> </TextBox>
+            <TextBlock Name="WpiszWykonawce" Text="{lex:Loc}"></TextBlock>
             <TextBox x:Name="Wykonawca"></TextBox>
 
             <!-- Dodane pole do wyboru pliku z obrazem -->
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                <TextBlock Text="Wybierz Zdjęcie:" VerticalAlignment="Center"/>
-                <Button Content="Wybierz" FontWeight="Bold" Background="#4CAF50" Foreground="White" Click="WybierzZdjecie_Click"/>
+                <TextBlock Name="WybierzZdjecie" Text="{lex:Loc}" VerticalAlignment="Center"/>
+                <Button Name="Wybierz" Content="{lex:Loc}" FontWeight="Bold" Background="#4CAF50" Foreground="White" Click="WybierzZdjecie_Click"/>
             </StackPanel>
 
             
 
-            <Button Content="Dodaj" FontWeight="Bold" Background="#4CAF50" Foreground="White" Click="DodajButton_Click"/>
+            <Button Name="Dodaj" Content="{lex:Loc}" FontWeight="Bold" Background="#4CAF50" Foreground="White" Click="DodajButton_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

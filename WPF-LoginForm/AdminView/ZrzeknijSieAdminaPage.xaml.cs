@@ -28,7 +28,7 @@ namespace WPF_LoginForm.AdminView
 
         private void RemoveAdminPrivileges(object sender, RoutedEventArgs e)
         {
-            string username = txtUser.Text.Trim(); // Adjusted to use txtUser
+            string username = txtUser1.Text.Trim(); // Adjusted to use txtUser
 
             DataAccess dataAccess = new DataAccess();
 

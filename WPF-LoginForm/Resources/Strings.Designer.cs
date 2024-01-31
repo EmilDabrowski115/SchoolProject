@@ -70,6 +70,15 @@ namespace WPF_LoginForm.Resources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Admin Settings.
+        /// </summary>
+        public static string AdminBtn {
+            get {
+                return ResourceManager.GetString("AdminBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Albums.
         /// </summary>
         public static string Albums {
@@ -102,6 +111,24 @@ namespace WPF_LoginForm.Resources {
         public static string ArtistsBtn {
             get {
                 return ResourceManager.GetString("ArtistsBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Promote.
+        /// </summary>
+        public static string Awans {
+            get {
+                return ResourceManager.GetString("Awans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Promote to Admin.
+        /// </summary>
+        public static string AwansujNaAdmina {
+            get {
+                return ResourceManager.GetString("AwansujNaAdmina", resourceCulture);
             }
         }
         
@@ -160,6 +187,24 @@ namespace WPF_LoginForm.Resources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add.
+        /// </summary>
+        public static string Dodaj {
+            get {
+                return ResourceManager.GetString("Dodaj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add Song.
+        /// </summary>
+        public static string DodajMuzyke {
+            get {
+                return ResourceManager.GetString("DodajMuzyke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu English.
         /// </summary>
         public static string English {
@@ -174,6 +219,33 @@ namespace WPF_LoginForm.Resources {
         public static string MainBlock {
             get {
                 return ResourceManager.GetString("MainBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu New Studio Name:.
+        /// </summary>
+        public static string NowaNazwa {
+            get {
+                return ResourceManager.GetString("NowaNazwa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Current Studio Name:.
+        /// </summary>
+        public static string ObecnaNazwaStudia {
+            get {
+                return ResourceManager.GetString("ObecnaNazwaStudia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Current Logo.
+        /// </summary>
+        public static string ObecneLogo {
+            get {
+                return ResourceManager.GetString("ObecneLogo", resourceCulture);
             }
         }
         
@@ -223,6 +295,42 @@ namespace WPF_LoginForm.Resources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu New Admin Nick:.
+        /// </summary>
+        public static string txtUser {
+            get {
+                return ResourceManager.GetString("txtUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Resign.
+        /// </summary>
+        public static string txtUser1 {
+            get {
+                return ResourceManager.GetString("txtUser1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Delete.
+        /// </summary>
+        public static string Usun {
+            get {
+                return ResourceManager.GetString("Usun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Delete Song.
+        /// </summary>
+        public static string UsunMuzyke {
+            get {
+                return ResourceManager.GetString("UsunMuzyke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu View Terms and Conditions:.
         /// </summary>
         public static string ViewTermsAndConditions {
@@ -241,11 +349,110 @@ namespace WPF_LoginForm.Resources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Album Name:.
+        /// </summary>
+        public static string WpiszAlbum {
+            get {
+                return ResourceManager.GetString("WpiszAlbum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Song Name:.
+        /// </summary>
+        public static string WpiszNazweUtworu {
+            get {
+                return ResourceManager.GetString("WpiszNazweUtworu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Artist Name:.
+        /// </summary>
+        public static string WpiszWykonawce {
+            get {
+                return ResourceManager.GetString("WpiszWykonawce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Select.
+        /// </summary>
+        public static string Wybierz {
+            get {
+                return ResourceManager.GetString("Wybierz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Select Image.
+        /// </summary>
+        public static string WybierzZdjecie {
+            get {
+                return ResourceManager.GetString("WybierzZdjecie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Your music:.
         /// </summary>
         public static string YourMusicBlock {
             get {
                 return ResourceManager.GetString("YourMusicBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Change.
+        /// </summary>
+        public static string Zmien {
+            get {
+                return ResourceManager.GetString("Zmien", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Change Logo.
+        /// </summary>
+        public static string ZmienLogo {
+            get {
+                return ResourceManager.GetString("ZmienLogo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Change Logo.
+        /// </summary>
+        public static string ZmienLogoAplikacji {
+            get {
+                return ResourceManager.GetString("ZmienLogoAplikacji", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Change Song.
+        /// </summary>
+        public static string ZmienMuzyke {
+            get {
+                return ResourceManager.GetString("ZmienMuzyke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Change Studio Name.
+        /// </summary>
+        public static string ZmienNazweStudia {
+            get {
+                return ResourceManager.GetString("ZmienNazweStudia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Resign Admin.
+        /// </summary>
+        public static string ZrzeknijSieAdmina {
+            get {
+                return ResourceManager.GetString("ZrzeknijSieAdmina", resourceCulture);
             }
         }
     }

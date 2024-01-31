@@ -120,6 +120,9 @@
   <data name="ActivityBtn" xml:space="preserve">
     <value>Sklep</value>
   </data>
+  <data name="AdminBtn" xml:space="preserve">
+    <value>Ustawienia Admina</value>
+  </data>
   <data name="Albums" xml:space="preserve">
     <value>Albumy</value>
   </data>
@@ -131,6 +134,12 @@
   </data>
   <data name="ArtistsBtn" xml:space="preserve">
     <value>Artyści</value>
+  </data>
+  <data name="Awans" xml:space="preserve">
+    <value>Awans</value>
+  </data>
+  <data name="AwansujNaAdmina" xml:space="preserve">
+    <value>Awansuj na Admina</value>
   </data>
   <data name="Bag" xml:space="preserve">
     <value>Koszyk</value>
@@ -150,11 +159,26 @@
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Zmień język:</value>
   </data>
+  <data name="Dodaj" xml:space="preserve">
+    <value>Dodaj</value>
+  </data>
+  <data name="DodajMuzyke" xml:space="preserve">
+    <value>Dodaj Muzykę</value>
+  </data>
   <data name="English" xml:space="preserve">
     <value>Angielski</value>
   </data>
   <data name="MainBlock" xml:space="preserve">
     <value>Główne:</value>
+  </data>
+  <data name="NowaNazwa" xml:space="preserve">
+    <value>Nowa Nazwa:</value>
+  </data>
+  <data name="ObecnaNazwaStudia" xml:space="preserve">
+    <value>Obecna Nazwa Studia:</value>
+  </data>
+  <data name="ObecneLogo" xml:space="preserve">
+    <value>Obecne Logo</value>
   </data>
   <data name="Polish" xml:space="preserve">
     <value>Polski</value>
@@ -171,13 +195,58 @@
   <data name="SongsBtn" xml:space="preserve">
     <value>Utwory</value>
   </data>
+  <data name="txtUser" xml:space="preserve">
+    <value>Nick nowego Admina:</value>
+  </data>
+  <data name="txtUser1" xml:space="preserve">
+    <value>Zrezygnuj</value>
+  </data>
+  <data name="Usun" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="UsunMuzyke" xml:space="preserve">
+    <value>Usuń Muzykę</value>
+  </data>
   <data name="ViewTermsAndConditions" xml:space="preserve">
-    <value>Wyświtl Regulamin</value>
+    <value>Wyświetl Regulamin</value>
   </data>
   <data name="WelcomeToTheStrore" xml:space="preserve">
     <value>Witamy w Sklepie!</value>
   </data>
+  <data name="WpiszAlbum" xml:space="preserve">
+    <value>Wpisz Album:</value>
+  </data>
+  <data name="WpiszNazweUtworu" xml:space="preserve">
+    <value>Wpisz nazwę Utworu:</value>
+  </data>
+  <data name="WpiszWykonawce" xml:space="preserve">
+    <value>Wpisz Wykonawcę:</value>
+  </data>
+  <data name="Wybierz" xml:space="preserve">
+    <value>Wybierz</value>
+  </data>
+  <data name="WybierzZdjecie" xml:space="preserve">
+    <value>Wybierz Zdjęcie</value>
+  </data>
   <data name="YourMusicBlock" xml:space="preserve">
     <value>Twoja Muzyka:</value>
+  </data>
+  <data name="Zmien" xml:space="preserve">
+    <value>Zmień</value>
+  </data>
+  <data name="ZmienLogo" xml:space="preserve">
+    <value>Zmień Logo</value>
+  </data>
+  <data name="ZmienLogoAplikacji" xml:space="preserve">
+    <value>Zmień Logo Aplikacji</value>
+  </data>
+  <data name="ZmienMuzyke" xml:space="preserve">
+    <value>Zmień Muzykę</value>
+  </data>
+  <data name="ZmienNazweStudia" xml:space="preserve">
+    <value>Zmień Nazwę Studia</value>
+  </data>
+  <data name="ZrzeknijSieAdmina" xml:space="preserve">
+    <value>Zrzeknij Się Admina</value>
   </data>
 </root>

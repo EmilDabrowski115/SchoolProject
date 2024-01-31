@@ -4,13 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_LoginForm.AdminView"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:ResxLocalizationProvider.DefaultAssembly="WPF-LoginForm"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="460" d:DesignWidth="600">
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 -20 0 0">
-            <TextBlock Text="Obecne Logo:" FontSize="40" ></TextBlock>
+            <TextBlock HorizontalAlignment="Center" Name="ObecneLogo" Text="{lex:Loc}" FontSize="40" ></TextBlock>
             <Image x:Name="StudioLogoImage" Margin="0 20 0 0" Width="250"></Image>
-            <Button Height="30" Content="Zmień logo" FontWeight="Bold" Background="#673AB7" Foreground="White" Click="ChangeLogoButton_Click"></Button>
+            <Button Height="30" Name="ZmienLogo" Content="{lex:Loc}" FontWeight="Bold" Background="#673AB7" Foreground="White" Click="ChangeLogoButton_Click"></Button>
         </StackPanel>
     </Grid>
 </UserControl>

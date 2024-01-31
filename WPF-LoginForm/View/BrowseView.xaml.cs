@@ -29,24 +29,23 @@ namespace WPF_LoginForm.View
         }
         private void zmianaWybierania(object sender, SelectionChangedEventArgs e)
         {
-            if (wybieranie != null && contentControl != null && wybieranie.SelectedItem != null && wybieranie.SelectedItem is ComboBoxItem selectedItem)
+            if (e.AddedItems.Count > 0)
             {
-                string selectedOption = selectedItem.Content.ToString();
+                int selectedIndex = (sender as ComboBox).SelectedIndex;
 
                 // W zależności od wybranej opcji ustaw odpowiedni widok
-                switch (selectedOption)
+                switch (selectedIndex)
                 {
-                    case "Artists":
-                        contentControl.Content = new ArtistsView(); // Załóżmy, że masz widok dla artystów o nazwie ArtistsView
+                    case 0:
+                        contentControl.Content = new SongsView(); // Załóżmy, że masz widok dla artystów o nazwie ArtistsView
                         break;
-                    case "Albums":
+                    case 1:
                         contentControl.Content = new AlbumsView(); // Załóżmy, że masz widok dla albumów o nazwie AlbumsView
                         break;
-                    case "Songs":
-                        contentControl.Content = new SongsView(); // Załóżmy, że masz widok dla utworów o nazwie SongsView
+                    case 2:
+                        contentControl.Content = new ArtistsView(); // Załóżmy, że masz widok dla utworów o nazwie SongsView
                         break;
-                    default:
-                        break;
+                   
                 }
             }
         }

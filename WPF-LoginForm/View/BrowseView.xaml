@@ -16,7 +16,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Background="#333">
-            <ComboBox x:Name="wybieranie" SelectionChanged="zmianaWybierania" FontSize="17" Height="30" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5 0 0 0" SelectedIndex="0" >
+            <ComboBox x:Name="wybieranie" SelectionChanged="zmianaWybierania" FontSize="17" Height="30" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5 0 0 0"  >
                 <ComboBoxItem Name="Songs" Content="{lex:Loc}"></ComboBoxItem>
                 <ComboBoxItem Name="Albums" Content="{lex:Loc}"></ComboBoxItem>
                 <ComboBoxItem Name="Artists" Content="{lex:Loc}"></ComboBoxItem>

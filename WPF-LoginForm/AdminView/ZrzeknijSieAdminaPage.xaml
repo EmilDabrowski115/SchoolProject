@@ -3,14 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:ResxLocalizationProvider.DefaultAssembly="WPF-LoginForm"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              xmlns:local="clr-namespace:WPF_LoginForm.AdminView"
              mc:Ignorable="d" 
              
              d:DesignHeight="460" d:DesignWidth="600">
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBox x:Name="txtUser" Height="70" Width="550" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Wpisz Nick Admina"></TextBox>
-            <Button Content="zrzeknij sie admina" Click="RemoveAdminPrivileges" Background="#2196F3" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" Height="50" Width="150"></Button>
+            <TextBox x:Name="txtUser1" Height="70" Width="550" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{lex:Loc}"></TextBox>
+            <Button Name="ZrzeknijSieAdmina" Content="{lex:Loc}" Click="RemoveAdminPrivileges" Background="#2196F3" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" Height="50" Width="150"></Button>
         </StackPanel>
     </Grid>
 </UserControl>
