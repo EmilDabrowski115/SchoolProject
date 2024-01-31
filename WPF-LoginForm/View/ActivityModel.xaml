@@ -41,7 +41,7 @@
                     <ComboBoxItem Name="Songs" Content="{lex:Loc}"></ComboBoxItem>
                     <ComboBoxItem Name="Albums" Content="{lex:Loc}"></ComboBoxItem>
                 </ComboBox>
-            
+                         
             
         </StackPanel>
         </Border>

@@ -23,6 +23,7 @@ namespace WPF_LoginForm.View
         public ActivityModel()
         {
             InitializeComponent();
+            
         }
         
         private void BuyButton_Click(object sender, RoutedEventArgs e)

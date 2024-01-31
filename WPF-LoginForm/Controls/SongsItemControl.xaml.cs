@@ -24,29 +24,37 @@ namespace WPF_LoginForm
         public SongsItemControl()
         {
             InitializeComponent();
+            
         }
+
+      
+
         private void polubienieClick(object sender, RoutedEventArgs e)
         {
             // Pobierz DataContext (czyli obiekt Utwor przypisany do tej kontrolki)
             Utwor utwor = (Utwor)DataContext;
-            // Zmień wartość właściwości Lubiany na true
-            utwor.Lubiany = !utwor.Lubiany;
-            if (utwor.Lubiany == true)
-            {
-                polubienie.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#cc3434"));
-                polubienie.Foreground = Brushes.White;
-            }
-            if (utwor.Lubiany == false)
-            {
-                polubienie.Background = Brushes.White;
-                polubienie.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#cc3434"));
-            }
 
+            if (utwor != null)
+            {
+                // Zmień wartość właściwości Lubiany na przeciwną
+                utwor.Lubiany = !utwor.Lubiany;
 
+                // Aktualizuj wygląd przycisku w zależności od wartości Lubiany
+                if (utwor.Lubiany)
+                {
+                    polubienie.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#cc3434"));
+                    polubienie.Foreground = Brushes.White;
+                }
+                else
+                {
+                    polubienie.Background = Brushes.White;
+                    polubienie.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#cc3434"));
+                }
+            }
         }
     }
 
- }
+}
 
 
 
