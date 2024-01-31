@@ -240,7 +240,7 @@ namespace WPF_LoginForm.Data
                     connection.Open();
 
                     // Retrieve studio information from the database
-                    string query = "SELECT * FROM StudioInfo LIMIT 1";
+                    string query = "SELECT * FROM StudioInfo WHERE id=1";
                     StudioInfo studioInfo = connection.QueryFirstOrDefault<StudioInfo>(query);
 
                     return studioInfo;
@@ -252,6 +252,69 @@ namespace WPF_LoginForm.Data
                 return null;
             }
         }
+
+        public StudioInfo UpdateStudioName(string newStudioName)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Update studio name in the database
+                    string updateQuery = "UPDATE StudioInfo SET NazwaStudia = @NewStudioName WHERE id=1";
+                    int rowsAffected = connection.Execute(updateQuery, new { NewStudioName = newStudioName });
+
+                    // Check if the update was successful
+                    if (rowsAffected > 0)
+                    {
+                        // Retrieve updated studio information from the database
+                        string selectQuery = "SELECT * FROM StudioInfo WHERE id=1";
+                        StudioInfo updatedStudioInfo = connection.QueryFirstOrDefault<StudioInfo>(selectQuery);
+                        return updatedStudioInfo;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return null;
+        }
+
+
+        public StudioInfo UpdateStudioLogo(byte[] newLogo)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Update studio logo in the database
+                    string updateQuery = "UPDATE StudioInfo SET LogoStudia = @NewLogo WHERE id=1";
+                    int rowsAffected = connection.Execute(updateQuery, new { NewLogo = newLogo });
+
+                    // Check if the update was successful
+                    if (rowsAffected > 0)
+                    {
+                        // Retrieve updated studio information from the database
+                        string selectQuery = "SELECT * FROM StudioInfo WHERE id=1";
+                        StudioInfo updatedStudioInfo = connection.QueryFirstOrDefault<StudioInfo>(selectQuery);
+                        return updatedStudioInfo;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return null;
+        }
+
+
 
 
         public bool AddMusicRecord(MusicRecord musicRecord)

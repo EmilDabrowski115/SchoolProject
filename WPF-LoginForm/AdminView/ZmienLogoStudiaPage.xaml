@@ -9,8 +9,8 @@
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 -20 0 0">
             <TextBlock Text="Obecne Logo:" FontSize="40" ></TextBlock>
-            <Image Margin="0 20 0 0" Source="C:\Users\Asus\Source\Repos\EmilDabrowski115\SchoolProject\WPF-LoginForm\Images\Logo.png" Width="250"></Image>
-            <Button Height="30" Content="Zmień logo" FontWeight="Bold" Background="#673AB7" Foreground="White"></Button>
+            <Image x:Name="StudioLogoImage" Margin="0 20 0 0" Width="250"></Image>
+            <Button Height="30" Content="Zmień logo" FontWeight="Bold" Background="#673AB7" Foreground="White" Click="ChangeLogoButton_Click"></Button>
         </StackPanel>
     </Grid>
 </UserControl>
