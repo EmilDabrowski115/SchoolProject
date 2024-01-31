@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WPF_LoginForm"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:ResxLocalizationProvider.DefaultAssembly="WPF-LoginForm"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+             
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="600">
  
@@ -26,7 +29,7 @@
         </Grid>
         <!-- Zmiana tła aplikacji -->
         <StackPanel Grid.Row="1">
-            <TextBlock FontSize="18" Text="Zmień tło aplikacji:" Foreground="Black" Margin="10 8 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock FontSize="18" Name="ChangeBackground" Text="{lex:Loc}" Foreground="Black" Margin="10 8 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="240" Height="30">
                 <ComboBoxItem Content="Tło 1" />
                 <ComboBoxItem Content="Tło 2" />
@@ -35,16 +38,16 @@
 
         <!-- Zmiana języka aplikacji -->
         <StackPanel Grid.Row="2">
-            <TextBlock FontSize="18" Text="Zmień język aplikacji:" Foreground="Black" Margin=" 10 8 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="240" Height="30">
-            <ComboBoxItem Content="Polski" />
-            <ComboBoxItem Content="Angielski" />
+            <TextBlock FontSize="18" Name="ChangeLanguage" Text="{lex:Loc}" Foreground="Black" Margin=" 10 8 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="240" Height="30"  SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem Name="English" Content="{lex:Loc}"/>
+                <ComboBoxItem Name="Polish" Content="{lex:Loc}" />
         </ComboBox>
         </StackPanel>
 
         <!-- Zmiana wyglądu przycisków -->
         <StackPanel Grid.Row="3">
-            <TextBlock FontSize="18" Text="Zmień wygląd przycisków:" Foreground="Black" Margin="10,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <TextBlock FontSize="18" Name="ChangeButtons" Text="{lex:Loc}" Foreground="Black" Margin="10,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="240" Height="30">
             <ComboBoxItem Content="Styl 1" />
             <ComboBoxItem Content="Styl 2" />
@@ -53,7 +56,7 @@
         <!--Wyswietl Regulamin-->
         <Grid Grid.Row="4">
             <StackPanel Orientation="Horizontal">
-                <TextBlock FontSize="18" Text="Wyświetl regulamin" Foreground="Black" Margin="10,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBlock FontSize="18" Name="ViewTermsAndConditions" Text="{lex:Loc}" Foreground="Black" Margin="10,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
                 <Button Content="&#x2764;" x:Name="RegulaminBtn" Click="RegulaminBtnClick" Height="30" Width="30" VerticalAlignment="top" HorizontalAlignment="Right" Margin="5 8 0 0">                    
                 </Button>
             </StackPanel>

@@ -30,7 +30,7 @@ namespace WPF_LoginForm
         {
             InitializeComponent();
             InicjalizujListeUtworow();
-            DataContext = new BrowseViewModel();
+            DataContext = new BrowseView();
 
             Models.UserSettings userSettings = new Models.UserSettings();
             userSettings.Load();
@@ -134,31 +134,31 @@ namespace WPF_LoginForm
         #region Widoki
         private void BrowceBtn_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new BrowseViewModel();
+            DataContext = new BrowseView();
         }
 
         private void SettingsBtn_click(object sender, RoutedEventArgs e)
         {
-            DataContext = new SettingsViewModel();
+            DataContext = new SettingsView();
         }
 
         private void ActivityBtn_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ActivityViewModel();
+            DataContext = new ActivityModel();
         }
         private void SongsBtn_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new SongsViewModel();
+            DataContext = new SongsView();
         }
 
         private void AlbumsBtn_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new AlbumsViewModel();
+            DataContext = new AlbumsView();
         }
 
         private void Artists_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new ArtistsViewModel();
+            DataContext = new ArtistsView();
         }
 
 

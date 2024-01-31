@@ -40,15 +40,16 @@ namespace WPF_LoginForm.View
 
             if (studioInfo != null)
             {
-                Models.StudioInfo studioInfoModel = /* existing instance of StudioInfo model */;
+                Models.StudioInfo studioInfoModel = new Models.StudioInfo(); // Instantiate StudioInfo model
 
+                // Copy data from DataAccess.StudioInfo to Models.StudioInfo
                 studioInfoModel.Id = studioInfo.Id;
                 studioInfoModel.Nazwa = studioInfo.Nazwa;
                 studioInfoModel.Logo = studioInfo.Logo;
+
+                // Now you can use the studioInfoModel as needed
+                // For example, you can pass it to another method or update the UI
             }
-
-
-
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)

@@ -4,6 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF_LoginForm"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             lex:ResxLocalizationProvider.DefaultAssembly="WPF-LoginForm"
+             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+             
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="600">
     <Grid Background="White">
@@ -25,15 +29,15 @@
         
         <!-- Nagłówek sklepu muzycznego -->
         <Border Margin="10" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <TextBlock Text="Witaj w sklepie!" FontSize="18" FontWeight="Bold"/>
+            <TextBlock Text="{lex:Loc}" Name="WelcomeToTheStrore" FontSize="18" FontWeight="Bold"/>
         </Border>
 
         <!-- Lista produktów muzycznych -->
         <Border Grid.Row="2" BorderBrush="#333" BorderThickness="0 3 3 3" >
             <StackPanel Margin="10 5 0 0">
-            <ComboBox Width="160" x:Name="MyComboBox" SelectedIndex="0">
-                    <ComboBoxItem Content="Utwory"></ComboBoxItem>
-                    <ComboBoxItem Content="Albumy"></ComboBoxItem>
+            <ComboBox Width="160" SelectedIndex="0">
+                    <ComboBoxItem Name="Songs" Content="{lex:Loc}"></ComboBoxItem>
+                    <ComboBoxItem Name="Albums" Content="{lex:Loc}"></ComboBoxItem>
                 </ComboBox>
             
             
@@ -42,11 +46,11 @@
 
         <!-- Koszyk z wybranymi produktami -->
         <Border BorderBrush="#333" BorderThickness="0 3 0 3" Grid.Column="1" Grid.Row="2">
-            <TextBlock Text="Koszyk:" Margin="10 5 0 0" FontSize="15"></TextBlock>
+            <TextBlock Name="Bag" Text="{lex:Loc}" Margin="10 5 0 0" FontSize="15"></TextBlock>
         </Border>
 
         <!-- Przycisk kupna -->
-        <Button Content="Kup" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Width="100" Height="30" Click="BuyButton_Click"/>
+        <Button Name="Buy" Content="{lex:Loc}" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Width="100" Height="30" Click="BuyButton_Click"/>
         <!--Srodki-->
         <TextBlock Text="Twoje Zasoby: 100" Margin="0 0 30 0" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="1" FontSize="18" ></TextBlock>
     </Grid>

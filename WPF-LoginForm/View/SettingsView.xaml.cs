@@ -14,7 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-
+using WPFLocalizeExtension.Engine;
+using System.Globalization;
 
 
 namespace WPF_LoginForm.View
@@ -24,7 +25,7 @@ namespace WPF_LoginForm.View
     /// </summary>
     public partial class SettingsView : UserControl
     {
-        
+
         public SettingsView()
         {
             InitializeComponent();
@@ -46,7 +47,7 @@ namespace WPF_LoginForm.View
                         Title = "Regulamin",
                         Width = 500,
                         Height = 400,
-                        
+
                         Content = new TextBox
                         {
                             Text = regulaminContent,
@@ -70,10 +71,29 @@ namespace WPF_LoginForm.View
             }
         }
 
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Sprawdź, czy coś zostało wybrane
+            if (e.AddedItems.Count > 0)
+            {
+                // Pobierz indeks wybranej pozycji w ComboBox
+                int selectedIndex = (sender as ComboBox).SelectedIndex;
+
+                // Ustaw nową kulturę na podstawie wybranego indeksu
+                switch (selectedIndex)
+                {
+                    case 0: // English
+                        LocalizeDictionary.Instance.Culture = new CultureInfo("en-US");
+                        break;
+                    case 1: // Polish
+                        LocalizeDictionary.Instance.Culture = new CultureInfo("pl-PL");
+                        break;
+                        // Dodaj więcej przypadków dla innych języków, jeśli są obsługiwane
+                }
 
 
+            }
+        }
 
     }
-    }
-
-
+}
