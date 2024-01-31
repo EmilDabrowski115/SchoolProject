@@ -231,6 +231,102 @@ namespace WPF_LoginForm.Data
             }
         }
 
+        public class MusicRecord
+        {
+            public string NazwaUtworu { get; set; }
+            public string Album { get; set; }
+            public string Wykonawca { get; set; }
+            public byte[] ZDJ { get; set; }
+        }
+
+
+        public bool AddMusicRecord(MusicRecord musicRecord)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Sprawdź, czy utwór o danej nazwie, albumie, wykonawcy i zdj już istnieje w bazie danych
+                    string checkQuery = "SELECT COUNT(*) FROM BazaUtworow WHERE NazwaUtworu = @NazwaUtworu AND Album = @Album AND Wykonawca = @Wykonawca AND ZDJ = @ZDJ";
+                                        
+
+                    int existingRecordsCount = connection.ExecuteScalar<int>(checkQuery, musicRecord);
+
+                    if (existingRecordsCount > 0)
+                    {
+                        // Utwór o podanych danych już istnieje w bazie danych
+                        return false;
+                    }
+
+                    // Dodaj nowy utwór do bazy danych
+                    string insertQuery = "INSERT INTO BazaUtworow (NazwaUtworu, Album, Wykonawca, ZDJ) " +
+                                         "VALUES (@NazwaUtworu, @Album, @Wykonawca, @ZDJ)";
+
+                    int rowsAffected = connection.Execute(insertQuery, musicRecord);
+
+                    if (rowsAffected > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd: " + ex.Message);
+                return false;
+            }
+        }
+
+        public bool RemoveMusicRecord(string nazwaUtworu)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Sprawdź, czy utwór o danej nazwie istnieje w bazie danych
+                    string checkQuery = "SELECT COUNT(*) FROM BazaUtworow WHERE NazwaUtworu = @NazwaUtworu";
+
+                    int existingRecordsCount = connection.ExecuteScalar<int>(checkQuery, new { NazwaUtworu = nazwaUtworu });
+
+                    if (existingRecordsCount == 0)
+                    {
+                        // Utwór o podanej nazwie nie istnieje w bazie danych
+                        return false;
+                    }
+
+                    // Usuń utwór o podanej nazwie z bazy danych
+                    string deleteQuery = "DELETE FROM BazaUtworow WHERE NazwaUtworu = @NazwaUtworu";
+
+                    int rowsAffected = connection.Execute(deleteQuery, new { NazwaUtworu = nazwaUtworu });
+
+                    if (rowsAffected > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wystąpił błąd: " + ex.Message);
+                return false;
+            }
+        }
+
+
+
+
 
         public class UserSettings
         {

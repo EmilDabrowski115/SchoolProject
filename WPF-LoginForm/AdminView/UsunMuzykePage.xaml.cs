@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static WPF_LoginForm.Data.DataAccess;
+using WPF_LoginForm.Data;
 
 namespace WPF_LoginForm.AdminView
 {
@@ -23,6 +25,33 @@ namespace WPF_LoginForm.AdminView
         public UsunMuzykePage()
         {
             InitializeComponent();
+        }
+
+        private void UsunUtwor(object sender, RoutedEventArgs e)
+        {
+            // Pobierz dane z pól tekstowych
+            string nazwaUtworu = Utwor.Text;
+            
+
+
+            
+
+            DataAccess dataAccess = new DataAccess();
+
+            // Dodaj utwór do bazy danych
+            bool success = dataAccess.RemoveMusicRecord(nazwaUtworu);
+
+            if (success)
+            {
+                MessageBox.Show("Usunieto Utwor pomyslnie");
+
+                // Tutaj możesz wykonać dodatkowe operacje po pomyślnym dodaniu utworu do bazy danych
+            }
+            else
+            {
+                MessageBox.Show("taki utwor nie istnieje");
+
+            }
         }
     }
 }

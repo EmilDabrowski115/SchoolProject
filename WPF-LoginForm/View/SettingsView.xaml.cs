@@ -33,7 +33,7 @@ namespace WPF_LoginForm.View
         {
             try
             {
-                string filePath = @"C:\Users\Asus\Source\Repos\EmilDabrowski115\SchoolProject\WPF-LoginForm\Regulamin.txt";
+                string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\", "Regulamin.txt");
 
                 if (File.Exists(filePath))
                 {
