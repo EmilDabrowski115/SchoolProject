@@ -6,8 +6,9 @@
              xmlns:local="clr-namespace:WPF_LoginForm"
              mc:Ignorable="d" 
              d:DesignHeight="275" d:DesignWidth="200">
+    
     <Border Background="White" Padding="0.5">
-        <Grid Background="#333">
+        <Grid Background="{DynamicResource Back}">
             <StackPanel HorizontalAlignment="Center">
                 <Image Source="{Binding Image}" Margin="5 5 5 5" ></Image>
                 <TextBlock Text="{Binding Wykonawca}" FontSize="25" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 12 0 0"></TextBlock>

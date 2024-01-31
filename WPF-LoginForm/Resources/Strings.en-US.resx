@@ -159,6 +159,9 @@
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Change Language:</value>
   </data>
+  <data name="Ciemne" xml:space="preserve">
+    <value>Dark</value>
+  </data>
   <data name="Dodaj" xml:space="preserve">
     <value>Add</value>
   </data>
@@ -167,6 +170,9 @@
   </data>
   <data name="English" xml:space="preserve">
     <value>English</value>
+  </data>
+  <data name="Jasne" xml:space="preserve">
+    <value>Light</value>
   </data>
   <data name="MainBlock" xml:space="preserve">
     <value>Main:</value>
@@ -194,6 +200,12 @@
   </data>
   <data name="SongsBtn" xml:space="preserve">
     <value>Songs</value>
+  </data>
+  <data name="Styl1" xml:space="preserve">
+    <value>Style 1</value>
+  </data>
+  <data name="Styl2" xml:space="preserve">
+    <value>Style 1</value>
   </data>
   <data name="txtUser" xml:space="preserve">
     <value>New Admin Nick:</value>

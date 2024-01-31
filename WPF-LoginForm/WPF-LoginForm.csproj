@@ -123,6 +123,7 @@
     <Compile Include="AdminView\ZrzeknijSieAdminaPage.xaml.cs">
       <DependentUpon>ZrzeknijSieAdminaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppTheme.cs" />
     <Compile Include="MainWindowAdmin.xaml.cs">
       <DependentUpon>MainWindowAdmin.xaml</DependentUpon>
     </Compile>
@@ -242,6 +243,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\Ciemny.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Jasny.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ActivityModel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

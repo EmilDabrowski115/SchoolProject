@@ -10,6 +10,8 @@
              
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="600">
+    
+    
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -23,7 +25,7 @@
         </Grid.ColumnDefinitions>
         
         
-        <Grid Background="#333" Grid.ColumnSpan="2">
+        <Grid Background="{DynamicResource Back}" Grid.ColumnSpan="2">
         </Grid>
         
         
@@ -33,7 +35,7 @@
         </Border>
 
         <!-- Lista produktów muzycznych -->
-        <Border Grid.Row="2" BorderBrush="#333" BorderThickness="0 3 3 3" >
+        <Border Grid.Row="2" BorderBrush="{DynamicResource Back}" BorderThickness="0 3 3 3" >
             <StackPanel Margin="10 5 0 0">
             <ComboBox Width="160" SelectedIndex="0">
                     <ComboBoxItem Name="Songs" Content="{lex:Loc}"></ComboBoxItem>
@@ -45,7 +47,7 @@
         </Border>
 
         <!-- Koszyk z wybranymi produktami -->
-        <Border BorderBrush="#333" BorderThickness="0 3 0 3" Grid.Column="1" Grid.Row="2">
+        <Border BorderBrush="{DynamicResource Back}" BorderThickness="0 3 0 3" Grid.Column="1" Grid.Row="2">
             <TextBlock Name="Bag" Text="{lex:Loc}" Margin="10 5 0 0" FontSize="15"></TextBlock>
         </Border>
 

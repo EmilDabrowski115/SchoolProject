@@ -10,12 +10,15 @@
              lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              
              d:DesignHeight="550" d:DesignWidth="600">
+
+    
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Background="#333">
+        <Grid Background="{DynamicResource Back}">
             <ComboBox x:Name="wybieranie" SelectionChanged="zmianaWybierania" FontSize="17" Height="30" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5 0 0 0"  >
                 <ComboBoxItem Name="Songs" Content="{lex:Loc}"></ComboBoxItem>
                 <ComboBoxItem Name="Albums" Content="{lex:Loc}"></ComboBoxItem>

@@ -10,14 +10,12 @@
         lex:ResxLocalizationProvider.DefaultAssembly="WPF-LoginForm"
         lex:ResxLocalizationProvider.DefaultDictionary="Strings"
         
-        
         mc:Ignorable="d"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Title="MainWindowAdmin" Height="550" Width="800">
-   
-
+    
 
 
 
@@ -26,6 +24,16 @@
 
     <Border>
         <Grid>
+
+            <Grid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Jasny" Click="JansyThemeClick"></MenuItem>
+                    <MenuItem Header="Ciemny" Click="CiemnyThemeClick"></MenuItem>
+                </ContextMenu>
+            </Grid.ContextMenu>
+
+
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -47,7 +55,7 @@
            
 
             <!-- Przenieś DockPanel do odpowiedniego wiersza i kolumny -->
-            <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="5" Background="#333">
+            <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="5" Background="{DynamicResource Back}">
 
                 <!--Przyciski kołowe-->
                 <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" Margin="10 0 0 0">
@@ -128,7 +136,7 @@
                 <Button Name="AlbumsBtn" Click="AlbumsBtn_Click" Content="{lex:Loc}"  Height="30"></Button>
                 <Button Name="ArtistsBtn"   Click="Artists_Click"   Content="{lex:Loc}" Height="30"></Button>
             </StackPanel>
-            <StackPanel Grid.Row="5" Background="#333">
+            <StackPanel Grid.Row="5" Background="{DynamicResource Back}">
                 <TextBlock Text="Admin: " FontSize="15" Foreground="White"></TextBlock>
                 <Button Name="AdminBtn" Click="AdminBtn_Click" Content="{lex:Loc}" Height="30"></Button>
             </StackPanel>

@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF_LoginForm.View;
 using WPF_LoginForm.Viewmodel;
+using WPF_LoginForm;
 using static WPF_LoginForm.Data.DataAccess;
 
 namespace WPF_LoginForm
@@ -51,7 +52,7 @@ namespace WPF_LoginForm
 
 
 
-    private void CloseBtn(object sender, RoutedEventArgs e)
+        private void CloseBtn(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
@@ -112,11 +113,14 @@ namespace WPF_LoginForm
 
 
 
-        private void LanguaeBtn_Click(object sender, RoutedEventArgs e)
+        private void JansyThemeClick(object sender, RoutedEventArgs e)
         {
-           
+            AppTheme.ChangeTheme(new Uri("/Themes/Jasny.xaml", UriKind.Relative));
         }
-
+        private void CiemnyThemeClick(object sender, RoutedEventArgs e)
+        {
+            AppTheme.ChangeTheme(new Uri("/Themes/Ciemny.xaml", UriKind.Relative));
+        }
 
 
 

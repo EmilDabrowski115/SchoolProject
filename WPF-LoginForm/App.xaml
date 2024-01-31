@@ -5,7 +5,11 @@
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
              StartupUri="View/LoginView.xaml">
     <Application.Resources>
+
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Ciemny.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
             <Style TargetType="Window">
                 <Setter Property="WindowStyle" Value="None"/>
                 <Setter Property="AllowsTransparency" Value="True"/>
@@ -25,14 +29,6 @@
             <Style TargetType="Frame">
                 <Setter Property="NavigationUIVisibility" Value="Hidden"/>
             </Style>
-            
-
-
-
-          
-
-
-
 
         </ResourceDictionary>
     </Application.Resources>

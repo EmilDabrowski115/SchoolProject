@@ -187,6 +187,15 @@ namespace WPF_LoginForm.Resources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Dark.
+        /// </summary>
+        public static string Ciemne {
+            get {
+                return ResourceManager.GetString("Ciemne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add.
         /// </summary>
         public static string Dodaj {
@@ -210,6 +219,15 @@ namespace WPF_LoginForm.Resources {
         public static string English {
             get {
                 return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Light.
+        /// </summary>
+        public static string Jasne {
+            get {
+                return ResourceManager.GetString("Jasne", resourceCulture);
             }
         }
         
@@ -291,6 +309,24 @@ namespace WPF_LoginForm.Resources {
         public static string SongsBtn {
             get {
                 return ResourceManager.GetString("SongsBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Style 1.
+        /// </summary>
+        public static string Styl1 {
+            get {
+                return ResourceManager.GetString("Styl1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Style 2.
+        /// </summary>
+        public static string Styl2 {
+            get {
+                return ResourceManager.GetString("Styl2", resourceCulture);
             }
         }
         

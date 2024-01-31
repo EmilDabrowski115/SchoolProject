@@ -9,6 +9,8 @@
              
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="600">
+
+    
  
     <Grid d:Background="White">
         <Grid.ColumnDefinitions>
@@ -24,15 +26,15 @@
         </Grid.RowDefinitions>
 
 
-        <Grid Background="#333" Grid.ColumnSpan="2" Grid.Row="0">
+        <Grid Background="{DynamicResource Back}" Grid.ColumnSpan="2" Grid.Row="0">
             
         </Grid>
         <!-- Zmiana tła aplikacji -->
         <StackPanel Grid.Row="1">
             <TextBlock FontSize="18" Name="ChangeBackground" Text="{lex:Loc}" Foreground="Black" Margin="10 8 0 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="240" Height="30">
-                <ComboBoxItem Content="Tło 1" />
-                <ComboBoxItem Content="Tło 2" />
+            <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="240" Height="30" SelectionChanged="ComboBox_SelectionChanged_1">
+                <ComboBoxItem Name="Jasne" Content="{lex:Loc}" />
+                <ComboBoxItem Name="Ciemne" Content="{lex:Loc}" />
             </ComboBox>
         </StackPanel>
 
@@ -49,8 +51,8 @@
         <StackPanel Grid.Row="3">
             <TextBlock FontSize="18" Name="ChangeButtons" Text="{lex:Loc}" Foreground="Black" Margin="10,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top"  Width="240" Height="30">
-            <ComboBoxItem Content="Styl 1" />
-            <ComboBoxItem Content="Styl 2" />
+            <ComboBoxItem Name="Styl1" Content="{lex:Loc}" />
+            <ComboBoxItem Name="Styl2" Content="{lex:Loc}" />
         </ComboBox>
         </StackPanel>
         <!--Wyswietl Regulamin-->

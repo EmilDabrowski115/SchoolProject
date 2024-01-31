@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:WPF_LoginForm"
              mc:Ignorable="d" 
               d:DesignHeight="70" d:DesignWidth="600">
-    <Grid Background="#333">
+    
+    
+    <Grid Background="{DynamicResource Back}">
         <Grid.ColumnDefinitions>
             <!--Tutaj chyba nic-->
             <ColumnDefinition Width="10"></ColumnDefinition>

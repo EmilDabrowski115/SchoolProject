@@ -21,6 +21,9 @@ namespace WPF_LoginForm
         {
            
             LocalizeDictionary.Instance.Culture = CultureInfo.CurrentUICulture;
+            
+
+
         }
 
 

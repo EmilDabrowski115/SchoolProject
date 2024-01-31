@@ -100,6 +100,16 @@ namespace WPF_LoginForm
         }
 
 
+        private void JansyThemeClick(object sender, RoutedEventArgs e)
+        {
+            AppTheme.ChangeTheme(new Uri("/Themes/Jasny.xaml", UriKind.Relative));
+        }
+        private void CiemnyThemeClick(object sender, RoutedEventArgs e)
+        {
+            AppTheme.ChangeTheme(new Uri("/Themes/Ciemny.xaml", UriKind.Relative));
+        }
+
+
 
 
 
@@ -145,6 +155,9 @@ namespace WPF_LoginForm
 
 
         #endregion
+
+
+
 
 
     }

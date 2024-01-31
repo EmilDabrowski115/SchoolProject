@@ -95,5 +95,28 @@ namespace WPF_LoginForm.View
             }
         }
 
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            // Sprawdź, czy coś zostało wybrane
+            if (e.AddedItems.Count > 0)
+            {
+                
+                int selectedIndex = (sender as ComboBox).SelectedIndex;
+
+                
+                switch (selectedIndex)
+                {
+                    case 0:
+                        AppTheme.ChangeTheme(new Uri("/Themes/Jasny.xaml", UriKind.Relative));
+                        break;
+                    case 1:
+                        AppTheme.ChangeTheme(new Uri("/Themes/Ciemny.xaml", UriKind.Relative));
+                        break;
+                        
+                }
+
+
+            }
+        }
     }
 }
