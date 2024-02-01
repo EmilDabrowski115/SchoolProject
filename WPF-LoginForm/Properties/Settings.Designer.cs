@@ -34,5 +34,29 @@ namespace WPF_LoginForm.Properties {
                 this["Username"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Credits {
+            get {
+                return ((int)(this["Credits"]));
+            }
+            set {
+                this["Credits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Purchased {
+            get {
+                return ((string)(this["Purchased"]));
+            }
+            set {
+                this["Purchased"] = value;
+            }
+        }
     }
 }

@@ -144,8 +144,8 @@
   <data name="Bag" xml:space="preserve">
     <value>Bag</value>
   </data>
-  <data name="BrowceBtn" xml:space="preserve">
-    <value>Browce</value>
+  <data name="BrowseBtn" xml:space="preserve">
+    <value>Browse</value>
   </data>
   <data name="Buy" xml:space="preserve">
     <value>Kup</value>

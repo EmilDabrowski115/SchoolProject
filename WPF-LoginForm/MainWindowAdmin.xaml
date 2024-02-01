@@ -123,7 +123,7 @@
 
             <StackPanel Grid.Row="3">
                 <TextBlock Name="MainBlock" Text="{lex:Loc}" FontSize="15" Foreground="White"></TextBlock>
-                <Button Name="BrowceBtn" Content="{lex:Loc}" Click="BrowceBtn_Click" Height="30"></Button>
+                <Button Name="BrowseBtn" Content="{lex:Loc}" Click="BrowseBtn_Click" Height="30"></Button>
                 <Button Content="{lex:Loc}" Name="ActivityBtn" Click="ActivityBtn_Click" Height="30"></Button>
                 <Button Content="{lex:Loc}" Height="30" Name="SettingsBtn" Click="SettingsBtn_click"></Button>
 

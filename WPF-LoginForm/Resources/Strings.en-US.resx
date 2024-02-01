@@ -144,8 +144,8 @@
   <data name="Bag" xml:space="preserve">
     <value>Bag</value>
   </data>
-  <data name="BrowceBtn" xml:space="preserve">
-    <value>Browce</value>
+  <data name="BrowseBtn" xml:space="preserve">
+    <value>Browse</value>
   </data>
   <data name="Buy" xml:space="preserve">
     <value>Buy</value>
@@ -173,6 +173,9 @@
   </data>
   <data name="Jasne" xml:space="preserve">
     <value>Light</value>
+  </data>
+  <data name="Kredyty" xml:space="preserve">
+    <value>Credits</value>
   </data>
   <data name="MainBlock" xml:space="preserve">
     <value>Main:</value>

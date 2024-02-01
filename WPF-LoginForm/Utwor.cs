@@ -9,6 +9,7 @@ using static WPF_LoginForm.Data.DataAccess;
 using WPF_LoginForm.Data;
 using System.IO;
 using System.Windows.Media.Imaging;
+using Newtonsoft.Json;
 
 namespace WPF_LoginForm
 {
@@ -18,7 +19,10 @@ namespace WPF_LoginForm
         public string Tytul { get; set; }
         public string Wykonawca { get; set; }
         public string Album { get; set; }
+
+        [JsonIgnore] // Exclude Image property from serialization
         public BitmapImage Image { get; set; }
+        
         public bool Lubiany { get; set; }
 
         // Dodaj inne właściwości utworu, jeśli są potrzebne

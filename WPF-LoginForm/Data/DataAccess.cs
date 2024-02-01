@@ -9,8 +9,8 @@ using System.Windows;
 using WPF_LoginForm.Models;
 using System.IO;
 using System.Security.Cryptography;
-
-
+using System.Security.AccessControl;
+using Newtonsoft.Json;
 
 namespace WPF_LoginForm.Data
 {
@@ -25,6 +25,156 @@ namespace WPF_LoginForm.Data
         {
             UserAuthenticated?.Invoke(username);
         }
+
+
+        public bool DeduceCredits(string username, int creditsToDeduce)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Check if the username exists
+                    string checkQuery = "SELECT * FROM User_Data WHERE Username = @Username";
+                    var userData = connection.QueryFirstOrDefault<UserSettings>(checkQuery, new { Username = username });
+
+                    if (userData != null)
+                    {
+                        // User found, update credits
+                        userData.Credits -= creditsToDeduce;
+
+                        // Update the User_Data table with the new credits value
+                        string updateQuery = "UPDATE User_Data SET Credits = @Credits WHERE Username = @Username";
+                        int rowsAffected = connection.Execute(updateQuery, new { Credits = userData.Credits, Username = username });
+
+                        if (rowsAffected > 0)
+                        {
+                            // Update successful
+                            return true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to update credits in the database.");
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found.");
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return false;
+            }
+        }
+
+
+        public UserSettings RetrieveUserData(string username)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Check if the username exists
+                    string checkQuery = "SELECT * FROM User_Data WHERE Username = @Username";
+                    var userData = connection.QueryFirstOrDefault<UserSettings>(checkQuery, new { Username = username });
+
+                    if (userData != null)
+                    {
+                        // User found, return the data
+                        return userData;
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found.");
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+        }
+
+        public void UpdateUserPurchasedSongs(string username, string newPurchasedSongsJson)
+        {
+            try
+            {
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Check if the user already exists
+                    string checkQuery = "SELECT * FROM User_Data WHERE Username = @Username";
+                    var userData = connection.QueryFirstOrDefault<UserSettings>(checkQuery, new { Username = username });
+
+                    if (userData != null)
+                    {
+                        // Check if the existing purchased songs is null
+                        if (userData.Purchased == null)
+                        {
+                            // Directly update the Purchased column with the new JSON
+                            string updateQuery = "UPDATE User_Data SET Purchased = @Purchased WHERE Username = @Username";
+                            int rowsAffected = connection.Execute(updateQuery, new { Username = username, Purchased = newPurchasedSongsJson });
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Purchased songs updated successfully!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to update purchased songs. Please try again.");
+                            }
+                        }
+                        else
+                        {
+                            // User found, merge the new and existing purchased songs
+                            List<Utwor> existingPurchasedSongs = JsonConvert.DeserializeObject<List<Utwor>>(userData.Purchased);
+                            List<Utwor> newPurchasedSongs = JsonConvert.DeserializeObject<List<Utwor>>(newPurchasedSongsJson);
+
+                            List<Utwor> mergedPurchasedSongs = existingPurchasedSongs.Concat(newPurchasedSongs).ToList();
+
+                            // Serialize the merged purchased songs
+                            string jsonMergedPurchasedSongs = JsonConvert.SerializeObject(mergedPurchasedSongs);
+
+                            // Update the User_Data table with the merged purchased songs
+                            string updateQuery = "UPDATE User_Data SET Purchased = @Purchased WHERE Username = @Username";
+                            int rowsAffected = connection.Execute(updateQuery, new { Username = username, Purchased = jsonMergedPurchasedSongs });
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Purchased songs updated successfully!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to update purchased songs. Please try again.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("User not found.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+
+
+
 
         public bool RegisterUser(UserModel user)
         {
@@ -50,6 +200,9 @@ namespace WPF_LoginForm.Data
                     // Insert new user
                     string insertQuery = "INSERT INTO Users (Username, Password, IsAdmin) VALUES (@Username, @Password, 0)";
                     int rowsAffected = connection.Execute(insertQuery, new { Username = user.Username, Password = HashedPassword });
+
+                    string insertQuery2 = "INSERT INTO User_Data (Username, Credits) VALUES (@Username, 100)";
+                    int rowsAffected2 = connection.Execute(insertQuery2, new { Username = user.Username});
 
                     if (rowsAffected > 0)
                     {
@@ -118,6 +271,8 @@ namespace WPF_LoginForm.Data
                 return new Tuple<bool, bool>(false, false);
             }
         }
+
+
 
         public Tuple<bool, bool> AddAdmin(string username)
         {

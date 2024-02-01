@@ -142,32 +142,42 @@ namespace WPF_LoginForm.View
             // Instead of directly checking for a boolean, use Item1 from the tuple
             if (loginResult.Item1)
             {
-                if (loginResult.Item2)
-                {
-                    // Admin login successful
-                    MessageBox.Show("Admin login successful!");
+                // Login successful
+                MessageBox.Show(loginResult.Item2 ? "Admin login successful!" : "User login successful!");
 
-                    Models.UserSettings userSettings = new Models.UserSettings { Username = username };
-                    userSettings.Save();
-                    MainWindowAdmin mainWindow = new MainWindowAdmin();
-                    mainWindow.Show();
+                // Retrieve user data
+                UserSettings userSettings = dataAccess.RetrieveUserData(username);
+
+                if (userSettings != null)
+                {
+                    // Set the UserSettings model
+                    userSettings.Save(); // Save the settings
+
+                    // Open the appropriate main window based on the user type
+                    if (loginResult.Item2)
+                    {
+                        // Admin user
+                        MainWindowAdmin mainWindow = new MainWindowAdmin();
+                        mainWindow.Show();
+                    }
+                    else
+                    {
+                        // Regular user
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                    }
+
+                    // Continue with your navigation or other actions
+
+                    // Navigate to the main view or perform other actions here
+                    // For now, let's just close the current window
+                    this.Close();
                 }
                 else
                 {
-                    // Regular user login successful
-                    MessageBox.Show("User login successful!");
-
-                    Models.UserSettings userSettings = new Models.UserSettings { Username = username };
-                    userSettings.Save();
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
+                    // Failed to retrieve user data
+                    MessageBox.Show("Failed to retrieve user data.");
                 }
-
-                // Continue with your navigation or other actions
-                
-                // Navigate to the main view or perform other actions here
-                // For now, let's just close the current window
-                this.Close();
             }
             else
             {

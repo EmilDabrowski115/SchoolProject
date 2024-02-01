@@ -87,7 +87,7 @@ namespace WPF_LoginForm
             click_Count++;
             if (click_Count % 2 == 1)
             {
-                BrowceBtn.Content = "Przeglądaj";
+                BrowseBtn.Content = "Przeglądaj";
                 SettingsBtn.Content = "Ustwawienia";
                 ActivityBtn.Content = "Sklep";
                 SongsBtn.Content = "Utwory";
@@ -99,7 +99,7 @@ namespace WPF_LoginForm
             }
             else
             {
-                BrowceBtn.Content = "Browse";
+                BrowseBtn.Content = "Browse";
                 SettingsBtn.Content = "Settings";
                 ActivityBtn.Content = "Shop";
                 SongsBtn.Content = "Songs";
@@ -136,7 +136,7 @@ namespace WPF_LoginForm
 
         //Ważne Widoki NIE ZMIENIAC
         #region Widoki
-        private void BrowceBtn_Click(object sender, RoutedEventArgs e)
+        private void BrowseBtn_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new BrowseView();
         }

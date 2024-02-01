@@ -34,6 +34,20 @@
             <TextBlock Text="{lex:Loc}" Name="WelcomeToTheStrore" FontSize="18" FontWeight="Bold"/>
         </Border>
 
+        <!-- Liked Songs ListBox -->
+        <ListBox Name="likedSongsListBox" Grid.Row="2" Grid.ColumnSpan="2" Margin="10">
+            <!-- Define how each item in the ListBox should be displayed -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Tytul}" FontWeight="Bold" FontSize="16"/>
+                        <TextBlock Text="{Binding Wykonawca}" FontSize="14"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
         <!-- Lista produktów muzycznych -->
         <Border Grid.Row="2" BorderBrush="{DynamicResource Back}" BorderThickness="0 3 3 3" >
             <StackPanel Margin="10 5 0 0">
@@ -54,6 +68,6 @@
         <!-- Przycisk kupna -->
         <Button Name="Buy" Content="{lex:Loc}" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" Width="100" Height="30" Click="BuyButton_Click"/>
         <!--Srodki-->
-        <TextBlock Text="Twoje Zasoby: 100" Margin="0 0 30 0" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="1" FontSize="18" ></TextBlock>
+        <TextBlock x:Name="CreditsText" Margin="0 0 30 0" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="1" FontSize="18" ></TextBlock>
     </Grid>
 </UserControl>
